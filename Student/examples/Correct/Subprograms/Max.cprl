@@ -1,0 +1,23 @@
+// Output should be:
+// max(51, 3) = 51
+// max(9, 9) = 9
+// max(-1, 7) = 7
+// max(-1, -5) = -1
+
+function max(x : Integer, y : Integer) return Integer is
+begin
+   if x >= y then
+      return x;
+   else
+      return y;
+   end if;
+end max;
+
+begin
+
+   writeln "max(51, 3) = ",  max(51, 3);
+   writeln "max(9, 9) = ",   max(9, 9);
+   writeln "max(-1, 7) = ",  max(-1, 7);
+   writeln "max(-1, -5) = ", max(-1, -5);
+
+end.

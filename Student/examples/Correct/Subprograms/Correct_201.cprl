@@ -1,0 +1,17 @@
+// tests var parameter
+// output should be:   5     6     7
+var i : Integer;
+
+procedure p(var x : Integer) is
+begin
+   write x, "   ";
+   x := 6;
+   write i, "   ";
+   x := 7;
+end p;
+
+begin
+   i := 5;
+   p(i);
+   writeln i;
+end.

@@ -1,0 +1,19 @@
+var x : Integer;
+
+function abs(n : Integer) return Integer is
+begin
+   if n >= 0 then
+      return n;
+   else
+      return -n;
+   end if;
+end abs;
+
+begin
+   loop
+      write "Enter an integer: ";
+      read x;
+      writeln "abs(", x, ") = ", abs(x);
+      exit when x = 0;
+   end loop;
+end.

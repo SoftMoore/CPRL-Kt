@@ -1,0 +1,37 @@
+   0:  PROGRAM 8
+   5:  LDCSTR  "Enter value for x: "
+  48:  PUTSTR
+  49:  LDGADDR 0
+  54:  GETINT
+  55:  STOREW
+  56:  LDCSTR  "Enter value for y: "
+  99:  PUTSTR
+ 100:  LDGADDR 4
+ 105:  GETINT
+ 106:  STOREW
+ 107:  LDCSTR  "x = "
+ 120:  PUTSTR
+ 121:  LDGADDR 0
+ 126:  LOADW
+ 127:  PUTINT
+ 128:  PUTEOL
+ 129:  LDCSTR  "y = "
+ 142:  PUTSTR
+ 143:  LDGADDR 4
+ 148:  LOADW
+ 149:  PUTINT
+ 150:  PUTEOL
+ 151:  LDGADDR 0
+ 156:  LOADW
+ 157:  LDGADDR 4
+ 162:  LOADW
+ 163:  CMP
+ 164:  BG 29
+ 169:  LDCSTR  "x <= y"
+ 186:  PUTSTR
+ 187:  PUTEOL
+ 188:  BR 22
+ 193:  LDCSTR  "x > y"
+ 208:  PUTSTR
+ 209:  PUTEOL
+ 210:  HALT

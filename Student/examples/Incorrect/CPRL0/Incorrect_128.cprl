@@ -1,0 +1,8 @@
+const i := 2;
+var x : Integer;
+
+begin
+
+   x := i;
+
+and.  // misspelled end

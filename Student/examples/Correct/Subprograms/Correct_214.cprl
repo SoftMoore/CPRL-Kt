@@ -1,0 +1,12 @@
+// constant function with no parameters
+// output should be:
+// 42
+
+function f return Integer is
+begin
+   return 42;
+end f;
+
+begin
+   writeln f;
+end.

@@ -1,0 +1,4 @@
+   0:  LDCSTR  "Hello, world."
+  31:  PUTSTR
+  32:  PUTEOL
+  33:  HALT

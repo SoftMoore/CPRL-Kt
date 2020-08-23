@@ -1,0 +1,4 @@
+Enter 2 characters: 
+c1 = A
+c2 = B
+c3 = Z

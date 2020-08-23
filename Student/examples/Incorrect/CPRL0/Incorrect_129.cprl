@@ -1,0 +1,11 @@
+const m, n := 2;     // only one identifier is allowed in a constant declaration
+
+// remainder is correct but it tests that spaces are not always required
+var x:Integer;
+
+function addOne(n:Integer) return Integer is
+begin return n+1; end addOne;
+
+begin
+   x:=5;writeln(addOne(x));
+end.

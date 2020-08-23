@@ -1,0 +1,43 @@
+// correct output is as follows:
+// for 0, 0
+// b1 and b2 = false
+// b1 or  b2 = false
+// for 0, 7
+// b1 and b2 = false
+// b1 or  b2 = true
+// for -5, 0
+// b1 and b2 = false
+// b1 or  b2 = true
+// for 12, -1
+// b1 and b2 = true
+// b1 or  b2 = true
+
+var b1, b2 : Boolean;
+var n1, n2 : Integer;
+
+begin
+   write "Enter value for n1:  ";
+   read n1;
+
+   write "Enter value for n2:  ";
+   read n2;
+
+   writeln "n1 = ", n1, ";  n2 = ", n2;
+
+   b1 := n1 != 0;
+   b2 := n2 != 0;
+
+   write "b1 and b2 = ";
+   if b1 and b2 then
+      writeln "true";
+   else
+      writeln "false";
+   end if;
+
+   write "b1 or  b2 = ";
+   if b1 or b2 then
+      writeln "true";
+   else
+      writeln "false";
+   end if;
+end.

@@ -1,0 +1,10 @@
+var   x : Integer;
+
+procedure inc(var n : Integer) is
+begin
+   n := n + 1;
+end inc;
+
+begin
+   inc(x)   // missing semicolon
+end.

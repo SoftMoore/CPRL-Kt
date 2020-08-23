@@ -1,0 +1,24 @@
+var x : Boolean;
+var y : Integer;
+var n = Integer;          // "=" instead of ":"
+
+function f(b : Boolean) return Integer is
+begin
+
+   if b then
+      return 1;
+   else
+      return -1;
+   end if;
+
+end f;
+
+begin
+
+   y := f(x);
+   write y;
+
+   n := f(x);       // n has not been declared
+   write n;
+
+end.

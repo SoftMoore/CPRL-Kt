@@ -1,0 +1,11 @@
+begin
+
+   // The following are valid.
+   writeln "character with \\n: ", '\n', "remaining text.";
+   writeln "character with \\t: ", '\t', "remaining text.";
+
+   // The following should not compile!
+   writeln "character with \\a: ", '\a', "remaining text.";
+   writeln "character with \\x: ", '\x', "remaining text.";
+
+end.

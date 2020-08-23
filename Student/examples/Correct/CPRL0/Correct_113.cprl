@@ -1,0 +1,84 @@
+// Tests logical and relational operators.
+// Correct output is "valid" for all 10 tests.
+
+var x, y, z : Integer;
+var f, t    : Boolean;
+
+begin
+   x := -5;
+   y := 2;
+   z := 7;
+   f := false;
+   t := true;
+
+   // true and true
+   if (x < y and y < z) then
+      writeln("valid");
+   else
+      writeln("not valid");
+   end if;
+
+   // true and false
+   if (x < y and x >= z) then
+      writeln("not valid");
+   else
+      writeln("valid");
+   end if;
+
+   // false and true
+   if (y <= x and y < z) then
+      writeln("not valid");
+   else
+      writeln("valid");
+   end if;
+
+   // false and false
+   if (y < x and z <= -x) then
+      writeln("not valid");
+   else
+      writeln("valid");
+   end if;
+
+   // true or true
+   if (x < y or y < z) then
+      writeln("valid");
+   else
+      writeln("not valid");
+   end if;
+
+   // true or false
+   if (x < y or -y > z) then
+      writeln("valid");
+   else
+      writeln("not valid");
+   end if;
+
+   // false or true
+   if (y <= x or y < z) then
+      writeln("valid");
+   else
+      writeln("not valid");
+   end if;
+
+   // false or false
+   if (-x < y or z <= y) then
+      writeln("not valid");
+   else
+      writeln("valid");
+   end if;
+
+   // should not evaluate the second operand
+   z := 0;
+
+   if (f and y/z >= 2) then
+      writeln("not valid");
+   else
+      writeln("valid");
+   end if;
+
+   if (t or y/z < 0) then
+      writeln("valid");
+   else
+      writeln("not valid");
+   end if;
+end.

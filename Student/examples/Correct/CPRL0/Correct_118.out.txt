@@ -1,0 +1,3 @@
+string with \n: 
+remaining text.
+string with \t: 	remaining text.

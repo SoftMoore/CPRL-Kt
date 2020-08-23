@@ -1,0 +1,11 @@
+var n : Integer;
+var b : Boolean;
+
+begin
+
+   n := 7;
+   b := not n;     // operand following not should be Boolean
+
+   writeln "b = ", b;
+
+end.

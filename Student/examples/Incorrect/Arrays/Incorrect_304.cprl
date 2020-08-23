@@ -1,0 +1,20 @@
+type T = array[10] of Integer;
+type T1 = array[10] of Integer;
+
+var a : T;
+var b : T;
+var c : T1;
+
+begin
+
+  if a = c // Not both same type, but also not both scalar
+  then
+     writeln "bogus";
+  end if;
+
+  if a = b  // Both the same type, but also not both scalar
+  then
+    writeln "bogus";
+  end if;
+
+end.

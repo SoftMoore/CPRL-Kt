@@ -1,0 +1,27 @@
+// test String literals with escape characters
+"string with a backspace       (\b) in the middle"
+"string with a tab             (\t) in the middle"
+"string with a newline (lf)    (\n) in the middle"
+"string with a form feed       (\f) in the middle"
+"string with a carriage return (\r) in the middle"
+"string with a double quote    (\") in the middle"
+"string with a single quote    (\') in the middle"
+"string with a backslash pair  (\\) in the middle"
+"string with a cr/lf           (\r\n) in the middle"
+
+// Test a string with a quote as the first character
+"\" this string begins with a quote"
+
+// Test empty string
+""
+
+// test Char literals with escape characters
+'\b'
+'\t'
+'\n'
+'\f'
+'\r'
+'\"'
+'\''
+'\\'
+

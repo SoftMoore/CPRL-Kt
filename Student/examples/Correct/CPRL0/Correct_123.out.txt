@@ -1,0 +1,7 @@
+ left-associative: 10
+right-associative: 14
+             cprl: 10
+
+ left-associative: 2
+right-associative: 8
+             cprl: 2

@@ -1,0 +1,22 @@
+// test that binary operators minus and divide are left associative
+// output should be as follows:
+// 4
+// 2
+var x, y, z : Integer;
+
+begin
+   // assumes no compile-time computations
+   x := 16;
+   y := 4;
+   z := 2;
+
+   writeln " left-associative: ", (x - y) -z;
+   writeln "right-associative: ", x - (y - z);
+   writeln "             cprl: ", x - y - z;
+
+   writeln;
+
+   writeln " left-associative: ", (x/y)/z;
+   writeln "right-associative: ", x/(y/z);
+   writeln "             cprl: ", x/y/z;
+end.

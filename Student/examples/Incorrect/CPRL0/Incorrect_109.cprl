@@ -1,0 +1,9 @@
+var x, y : Integer;
+const x := 3;       // x has been previously declared
+
+begin
+
+   y := 10;
+   writeln y;
+
+end.

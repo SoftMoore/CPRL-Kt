@@ -1,0 +1,22 @@
+// test scopes
+// output should be:
+// x = 0
+// n = 12
+// x = 5
+
+var x : Integer;
+
+procedure p is
+   var n : Integer;
+begin
+   n := 12;
+   writeln "n = ", n;
+   x := 5;
+end p;
+
+begin
+   x := 0;
+   writeln "x = ", x;
+   p;
+   writeln "x = ", x;
+end.

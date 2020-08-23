@@ -1,0 +1,21 @@
+// test identifiers for length and capitalization
+// correct output:     1      2
+
+var x : Integer;
+var ThisIsAVeryLongIdentifier     : Integer;
+var ThisIsAVeryLongIdentifierAlso : Integer;
+
+begin
+   x := 1;
+   write (x);             // note use of optional parentheses
+   write "    ";
+   ThisIsAVeryLongIdentifier := 1;
+   ThisIsAVeryLongIdentifierAlso := 2;
+
+   if ThisIsAVeryLongIdentifier != 1 or ThisIsAVeryLongIdentifierAlso != 2 then
+      writeln "ERROR";
+   else
+      writeln ThisIsAVeryLongIdentifierAlso;
+   end if;
+end.
+

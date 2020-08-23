@@ -1,0 +1,59 @@
+Complete implementations are provided for all classes not marked with an asterisk (*).
+Only partial implementations are provide for classes marked with an asterisk. For most
+of the AST classes, the partial implementations contain the following:
+  - constructor and override methods are declared but without any bodies
+  - fields and imports are left in as hints
+
+in package edu.citadel.cprl
+
+* ArrayType.java
+  Compiler.java
+  IdTable.java
+  LoopContext.java
+* Parser.java
+  ScopeLevel.java
+  SubprogramContext.java
+  Type.java
+
+in package edu.citadel.cprl.ast
+
+  AddingExpr.java
+* ArrayTypeDecl.java
+* AssignmentStmt.java
+  AST.java
+  BinaryExpr.java
+* ConstDecl.java
+  ConstValue.java
+  Declaration.java
+* DeclarativePart.java
+  ElsifPart
+* ExitStmt.java
+  Expression.java
+  FunctionCall.java
+* FunctionDecl.java
+  IfStmt.java
+  InitialDecl.java
+  LogicalExpr.java
+* LoopStmt.java
+* MultiplyingExpr.java
+  NamedDecl.java
+  NamedValue.java
+* NegationExpr.java
+* NotExpr.java
+  OutputStmt.java
+  ParameterDecl.java
+* ProcedureCallStmt.java
+* ProcedureDecl.java
+  Program.java
+* ReadStmt.java
+* RelationalExpr.java
+* ReturnStmt.java
+  SingleVarDecl.java
+  Statement.java
+* StatementPart.java
+  SubprogramDecl.java
+  UnaryExpr.java
+  VarDecl.java
+* Variable.java
+* WritelnStmt.java
+  WriteStmt.java

@@ -1,0 +1,15 @@
+// test reading characters
+var c1, c2, c3 : Char;
+
+begin
+   c3 := 'Z';
+
+   write "Enter 2 characters: ";
+   read c1;
+   read c2;
+   writeln;
+
+   writeln "c1 = ", c1;
+   writeln "c2 = ", c2;
+   writeln "c3 = ", c3;
+end.

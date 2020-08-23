@@ -1,0 +1,26 @@
+   0:  PROGRAM 5
+   5:  LDGADDR 0
+  10:  LDCINT 5
+  15:  STOREW
+  16:  LDGADDR 4
+  21:  LDGADDR 0
+  26:  LOADW
+  27:  LDCINT 10
+  32:  CMP
+  33:  BG 11
+  38:  LDCB1
+  39:  BR 6
+  44:  LDCB0
+  45:  NOT
+  46:  STOREB
+  47:  LDGADDR 4
+  52:  LOADB
+  53:  BZ 43
+  58:  LDCSTR  "not (x <= 10)"
+  89:  PUTSTR
+  90:  PUTEOL
+  91:  BR 26
+  96:  LDCSTR  "x <= 10"
+ 115:  PUTSTR
+ 116:  PUTEOL
+ 117:  HALT

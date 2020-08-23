@@ -1,0 +1,17 @@
+// tests var parameter
+// output should be:   A     B     C
+var c : Char;
+
+procedure p(var c : Char) is
+begin
+   write c, "   ";
+   c := 'B';
+   write c, "   ";
+   c := 'C';
+end p;
+
+begin
+   c := 'A';
+   p(c);
+   writeln c;
+end.

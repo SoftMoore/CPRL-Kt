@@ -1,0 +1,34 @@
+   0:  PROGRAM 4
+   5:  BR 72
+  10:  PROC 0
+  15:  LDLADDR -4
+  20:  LDLADDR -4
+  25:  LOADW
+  26:  INC
+  27:  STOREW
+  28:  LDCSTR  "during p:  n = "
+  63:  PUTSTR
+  64:  LDLADDR -4
+  69:  LOADW
+  70:  PUTINT
+  71:  PUTEOL
+  72:  RET 4
+  77:  LDGADDR 0
+  82:  LDCINT 5
+  87:  STOREW
+  88:  LDCSTR  "before p:  n = "
+ 123:  PUTSTR
+ 124:  LDGADDR 0
+ 129:  LOADW
+ 130:  PUTINT
+ 131:  PUTEOL
+ 132:  LDGADDR 0
+ 137:  LOADW
+ 138:  CALL -128
+ 143:  LDCSTR  " after p:  n = "
+ 178:  PUTSTR
+ 179:  LDGADDR 0
+ 184:  LOADW
+ 185:  PUTINT
+ 186:  PUTEOL
+ 187:  HALT

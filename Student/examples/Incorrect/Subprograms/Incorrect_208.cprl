@@ -1,0 +1,15 @@
+var x : Integer;
+
+function add return Integer is
+   var b : Boolean;
+begin
+   b := false;
+   return x + b;      // invalid expression in return statement
+end add;
+
+begin
+
+   x := 5;
+   writeln add;
+
+end.

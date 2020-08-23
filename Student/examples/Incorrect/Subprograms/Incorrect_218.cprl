@@ -1,0 +1,14 @@
+// Tries to use a procedure as an expression.
+// Note: In trying to recover this example generates a second, extraneous error.
+
+var x : Integer;
+
+procedure inc(var n : Integer) is
+begin
+    n := n + 1;
+end inc;
+
+begin
+   x := 3;
+   writeln inc(3);
+end.

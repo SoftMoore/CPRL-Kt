@@ -1,0 +1,13 @@
+// Check proper handling for a few escaped characters.
+// Correct should look something like the following:
+//
+// string with \n:
+// remaining text.
+// string with \t:     remaining text.
+
+begin
+
+   writeln "string with \\n: \nremaining text.";
+   writeln "string with \\t: \tremaining text.";
+
+end.

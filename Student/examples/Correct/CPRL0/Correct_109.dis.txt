@@ -1,0 +1,22 @@
+   0:  PROGRAM 4
+   5:  LDGADDR 0
+  10:  LDCINT1
+  11:  STOREW
+  12:  LDGADDR 0
+  17:  LDGADDR 0
+  22:  LOADW
+  23:  INC
+  24:  STOREW
+  25:  LDGADDR 0
+  30:  LOADW
+  31:  LDCINT 6
+  36:  CMP
+  37:  BZ 10
+  42:  BR -30
+  47:  LDCSTR  "x = "
+  60:  PUTSTR
+  61:  LDGADDR 0
+  66:  LOADW
+  67:  PUTINT
+  68:  PUTEOL
+  69:  HALT

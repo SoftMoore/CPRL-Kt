@@ -1,0 +1,5 @@
+begin
+
+   writeln 5    // missing semicolon at end of statement
+
+end.

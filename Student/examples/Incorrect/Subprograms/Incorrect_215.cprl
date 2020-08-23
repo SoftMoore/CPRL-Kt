@@ -1,0 +1,15 @@
+function f1(n : Integer) return Integer is
+begin
+   return 6;
+end f1;
+
+function f2(n : Integer) return Integer is
+begin
+   return 7;
+end f1;       // function name mismatch
+
+begin
+
+   writeln f1(3), f2(4);
+
+end.

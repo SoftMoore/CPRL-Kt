@@ -1,0 +1,26 @@
+// Test this with 3 disks.  Output should be as follows:
+// Enter number of disks to be moved:  3
+// Move a disk from A to B
+// Move a disk from A to C
+// Move a disk from B to C
+// Move a disk from A to B
+// Move a disk from C to A
+// Move a disk from C to B
+// Move a disk from A to B
+
+var numberOfDisks : Integer;
+
+procedure move(n : Integer, a : Char, b : Char, c : Char) is
+begin
+   if n > 0 then
+      move(n - 1, a, c, b);
+      writeln "Move a disk from ", a, " to ", b;
+      move(n - 1, c, b, a);
+   end if;
+end move;
+
+begin
+   write "Enter number of disks to be moved:  ";
+   read numberOfDisks;
+   move(numberOfDisks, 'A', 'B', 'C');
+end.

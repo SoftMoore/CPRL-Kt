@@ -1,0 +1,10 @@
+function f return Integer is
+    var x : Integer;
+begin
+    x := 'X';    // assign Char literal to an Integer
+    return 1;
+end f;
+
+begin
+   writeln(f);
+end.

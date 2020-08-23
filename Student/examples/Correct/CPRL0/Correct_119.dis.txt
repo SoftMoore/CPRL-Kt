@@ -1,0 +1,15 @@
+   0:  LDCSTR  "character with \\n: "
+  43:  PUTSTR
+  44:  LDCCH '\n'
+  47:  PUTCH
+  48:  LDCSTR  "remaining text."
+  83:  PUTSTR
+  84:  PUTEOL
+  85:  LDCSTR  "character with \\t: "
+ 128:  PUTSTR
+ 129:  LDCCH '\t'
+ 132:  PUTCH
+ 133:  LDCSTR  "remaining text."
+ 168:  PUTSTR
+ 169:  PUTEOL
+ 170:  HALT

@@ -1,0 +1,10 @@
+const i := 5;
+var x : Integer;
+
+begin  // incorrect2
+
+   x := 2;
+   i := x;    // assign to a constant
+
+end.
+

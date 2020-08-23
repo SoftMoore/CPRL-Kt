@@ -1,0 +1,49 @@
+var a, b : Integer;
+
+function abs(n : Integer) return Integer is
+begin
+   if n >= 0 then
+      return n;
+   else
+      return -n;
+   end if;
+end abs;
+
+function gcd(a : Integer, b : Integer) return Integer is
+   var temp : Integer;
+begin
+   // convert to absolute value
+   a := abs(a);
+   b := abs(b);
+
+   // compute GCD
+   while b != 0 loop
+      temp := a;
+      a := b;
+      b := temp mod b;
+   end loop;
+
+   return a;
+end gcd;
+
+begin
+
+   loop
+      write "Enter value for a (0 to exit):  ";
+      read a;
+      writeln "a = ", a;
+
+      exit when a = 0;
+
+      write "Enter value for b:  ";
+      read b;
+      writeln "b = ", b;
+
+      writeln;
+      writeln "GCD(", a, ", ", b, ") = ", gcd(a, b);
+      writeln;
+   end loop;
+
+   writeln "Done.";
+
+end.

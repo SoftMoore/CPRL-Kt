@@ -1,0 +1,9 @@
+var n : Integer;
+const big := 9999999999999;   // literal is too large for Integer
+
+begin
+
+   n := big;
+   writeln "n = ", n;
+
+end.

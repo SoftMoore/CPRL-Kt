@@ -1,0 +1,15 @@
+var x : Integer;
+
+begin
+
+   x := 1;
+
+   loop
+      x := x + 1;
+      y := x;   // error inside loop not related to exit
+      exit when x = 10;
+   end loop;
+
+   writeln "x = ", x;
+
+end.

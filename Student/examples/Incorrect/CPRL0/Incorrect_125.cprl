@@ -1,0 +1,8 @@
+var n : Integer;
+
+begin
+
+   n := 5;
+   return;   // return statement not nested within a subprogram
+
+end.

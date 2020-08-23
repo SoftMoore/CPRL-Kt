@@ -1,0 +1,19 @@
+// Enter the letters ABCDE (one at a time)
+// Output should be
+// EDCBA
+
+procedure reverse is
+   var c : Char;
+begin
+   read c;
+
+   if c != 'E' then
+       reverse;
+   end if;
+
+   write c;
+end reverse;
+
+begin
+   reverse;
+end.

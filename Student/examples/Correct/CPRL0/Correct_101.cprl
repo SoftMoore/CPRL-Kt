@@ -1,0 +1,16 @@
+// correct output is as follows:
+//  n = 35
+//  c = X
+
+var   m, n : Integer;
+var   c : Char;
+const five := 5;
+
+begin
+   m := 7;
+   n := five*m;
+   c := 'X';
+   write "n = ", n;   // test write with multiple expressions
+   writeln;
+   writeln "c = ", c;
+end.

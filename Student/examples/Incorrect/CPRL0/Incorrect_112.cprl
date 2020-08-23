@@ -1,0 +1,8 @@
+var x : ;     // missing type
+
+begin
+
+   x := 12;
+   writeln(x);
+
+end.

@@ -1,0 +1,18 @@
+var x : Integer;
+
+begin
+   loop
+      write "Enter an integer (0 to exit): ";
+      read x;
+
+      if x < 0 then
+         writeln x, " is negative";
+      elsif x = 0 then
+         writeln x, " is zero";
+      else
+         writeln x, " is positive";
+      end if;
+
+      exit when x = 0;
+   end loop;
+end.

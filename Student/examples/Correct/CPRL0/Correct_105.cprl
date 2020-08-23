@@ -1,0 +1,18 @@
+var x, y : Integer;
+
+begin
+   write "Enter value for x: ";
+   read x;
+   write "Enter value for y: ";
+   read y;
+
+   writeln "x = ", x;
+   writeln "y = ", y;
+
+   if x <= y then
+      writeln "x <= y";
+   else
+      writeln "x > y";
+   end if;
+end.
+

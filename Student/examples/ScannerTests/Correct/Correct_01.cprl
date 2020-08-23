@@ -1,0 +1,32 @@
+// reserved words
+and       array     begin     Boolean   Char
+class     const     declare   else      elsif
+end       exit      false     for       function
+if        in        is        Integer   loop
+mod       not       of        or        private
+procedure program   protected public    read
+readln    return    String    then      true
+type      var       when      while     write
+writeln
+
+// arithmetic operators
++    -    *    /
+
+// relational operators
+=   !=   <   <=   >   >=
+
+// assignment and other punctuation symbols
+:=   (   )   [   ]   ,   :   ;   .
+
+// identifiers
+x   y   x1   i   aVeryLongIdentifier
+
+// identifiers that look like reserved words (CPRL is case sensitive)
+IF   While   LOOP   End   Array   TYPE
+
+// literals
+1   0   10  123456789
+'a'   'x'   '\"'   '\''
+"a"   "a longer string"   "yet a longer string with a quote (\") in the middle"
+
+// and finally EOF

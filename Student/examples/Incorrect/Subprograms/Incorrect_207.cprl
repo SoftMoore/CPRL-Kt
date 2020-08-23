@@ -1,0 +1,19 @@
+var x : Integer;
+
+function f(b : Boolean, n : Integer) return Integer is
+begin
+
+  if b then
+     x := 1;
+  else
+     x := 0;
+  end if;      // no return statement
+
+end f;
+
+begin
+
+   x := f(true, 12);
+   writeln x;
+
+end.

@@ -1,0 +1,19 @@
+ // Output should be
+ // before p:  n = 5
+ // during p:  n = 6
+ //  after p:  n = 5
+
+ var n : Integer;
+
+ procedure p(n : Integer) is
+ begin
+     n := n + 1;
+     writeln "during p:  n = ", n;
+ end p;
+
+begin
+    n := 5;
+    writeln "before p:  n = ", n;
+    p(n);
+    writeln " after p:  n = ", n;
+end.

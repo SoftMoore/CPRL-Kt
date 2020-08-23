@@ -1,0 +1,43 @@
+// computes greatest common divisor of a and b
+
+var a, b, a1, b1, temp : Integer;
+
+begin
+   loop
+      write "Enter value for a (0 to exit):  ";
+      read a;
+      writeln "a = ", a;
+      writeln;
+      exit when a = 0;
+
+      write "Enter value for b:  ";
+      read b;
+      writeln "b = ", b;
+      writeln;
+
+      // save a and b
+      a1 := a;
+      b1 := b;
+
+      // convert to absolute value
+      if a1 < 0 then
+         a1 := -a1;
+      end if;
+
+      if b1 < 0 then
+         b1 := -b1;
+      end if;
+
+      // compute GCD
+      loop
+         temp := a1;
+         a1 := b1;
+         b1 := temp mod b1;
+         exit when b1 = 0;
+      end loop;
+
+      writeln "GCD(", a, ", ", b, ") = ", a1;
+      writeln;
+   end loop;
+   writeln "Done.";
+end.

@@ -1,0 +1,21 @@
+   0:  BR 53
+   5:  PROC 2
+  10:  LDLADDR 8
+  15:  GETCH
+  16:  STORE2B
+  17:  LDCB0
+  18:  LDCB0
+  19:  LDLADDR 8
+  24:  LOAD2B
+  25:  LDCB0
+  26:  LDCB0
+  27:  LDCCH 'E'
+  30:  CMP
+  31:  BZ 10
+  36:  CALL -31
+  41:  LDLADDR 8
+  46:  LOAD2B
+  47:  PUTCH
+  48:  RET 0
+  53:  CALL -48
+  58:  HALT

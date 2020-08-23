@@ -1,0 +1,35 @@
+   PROGRAM 4
+   BR L1
+L0:
+   PROC 4
+   LDLADDR 8
+   LDCINT 12
+   STOREW
+   LDCSTR "n = "
+   PUTSTR
+   LDLADDR 8
+   LOADW
+   PUTINT
+   PUTEOL
+   LDGADDR 0
+   LDCINT 5
+   STOREW
+   RET 0
+L1:
+   LDGADDR 0
+   LDCINT 0
+   STOREW
+   LDCSTR "x = "
+   PUTSTR
+   LDGADDR 0
+   LOADW
+   PUTINT
+   PUTEOL
+   CALL L0
+   LDCSTR "x = "
+   PUTSTR
+   LDGADDR 0
+   LOADW
+   PUTINT
+   PUTEOL
+   HALT

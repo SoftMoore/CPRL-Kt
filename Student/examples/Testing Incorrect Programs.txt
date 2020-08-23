@@ -1,0 +1,74 @@
+The initial versions of your parser will not reject incorrect programs
+if they are legal syntactically.  The illegal programs marked with an
+asterisk below are all legal syntactically according to the CPRL grammar
+with scope checking using IdTable.
+
+Incorrect\CPRL0
+
+Incorrect_101.cprl
+Incorrect_102.cprl
+Incorrect_103.cprl
+Incorrect_104.cprl
+Incorrect_105.cprl
+Incorrect_106.cprl
+Incorrect_107.cprl (*)
+Incorrect_108.cprl (*)
+Incorrect_109.cprl
+Incorrect_110.cprl
+Incorrect_111.cprl (*)
+Incorrect_112.cprl
+Incorrect_113.cprl
+Incorrect_114.cprl (*)
+Incorrect_115.cprl
+Incorrect_116.cprl (*)
+Incorrect_117.cprl (*)
+Incorrect_118.cprl (*)
+Incorrect_119.cprl (*)
+Incorrect_120.cprl (*)
+Incorrect_121.cprl (*)
+Incorrect_122.cprl
+Incorrect_123.cprl
+Incorrect_124.cprl (*)
+Incorrect_125.cprl (*)
+Incorrect_126.cprl
+Incorrect_127.cprl (*)
+Incorrect_128.cprl
+Incorrect_129.cprl
+Incorrect_130.cprl
+
+__________________________________________________________________
+
+
+Incorrect\Subprograms
+
+Incorrect_201.cprl (*)
+Incorrect_202.cprl (*)
+Incorrect_203.cprl
+Incorrect_204.cprl (*)
+Incorrect_205.cprl
+Incorrect_206.cprl (*)
+Incorrect_207.cprl (*)
+Incorrect_208.cprl (*)
+Incorrect_209.cprl (*)
+Incorrect_210.cprl
+Incorrect_211.cprl
+Incorrect_212.cprl (*)
+Incorrect_213.cprl (*)
+Incorrect_214.cprl (*)
+Incorrect_215.cprl
+Incorrect_216.cprl (*)
+Incorrect_217.cprl (*)
+Incorrect_218.cprl
+Incorrect_219.cprl (*)
+Incorrect_220.cprl (*)
+
+__________________________________________________________________
+
+
+Incorrect\Arrays
+
+Incorrect_301.cprl (*)
+Incorrect_302.cprl (*)
+Incorrect_303.cprl (*)
+Incorrect_304.cprl (*)
+Incorrect_305.cprl

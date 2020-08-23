@@ -1,0 +1,11 @@
+var m, n : Integer;
+const five := 5;
+
+begin
+
+   m := 9999999999999;   // literal is too large for Integer
+   n := five*m;
+
+   writeln "n = ", n;
+
+end.

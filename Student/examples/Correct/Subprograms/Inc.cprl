@@ -1,0 +1,16 @@
+// output should be
+// x = 6
+
+const five := 5;
+var x : Integer;
+
+procedure inc(var n : Integer) is
+begin
+    n := n + 1;
+end inc;
+
+begin
+    x := five;
+    inc(x);
+    writeln "x = ", x;
+end.

@@ -1,0 +1,15 @@
+type T = array[10] of Integer;
+var  a : T;
+var  c : Char;
+
+begin
+
+   c := 'H';         // no error
+   read a[0];        // no error
+   a[0] := 'E';      // type mismatch on assignment
+   read a[true];     // index type is not Integer
+   a['x'] := 5;      // index type is not Integer
+   a[c] := 8;        // index type is not Integer
+   writeln a[0];
+
+end.

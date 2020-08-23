@@ -1,0 +1,19 @@
+var x : Integer;
+
+function f(b : Boolean) return Integer is
+begin
+
+   if b then
+      return 1;
+   else
+      return -1;
+   end if;
+
+end f;
+
+begin
+
+   x := f(true, 7);       // incorrect number of parameters
+   writeln x;
+
+end.

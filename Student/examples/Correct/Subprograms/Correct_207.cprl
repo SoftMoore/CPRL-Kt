@@ -1,0 +1,26 @@
+// Output should be:
+// n = 4
+// bounds check failed
+// n = 13
+
+var n : Integer;
+
+procedure inc(var x : Integer, ub : Integer) is
+begin
+   if x < ub then
+      x := x + 1;
+   else
+      writeln "bounds check failed";
+   end if;
+end inc;
+
+begin
+
+   n := 3;
+   inc(n, 10);
+   writeln "n = ", n;
+   n := 13;
+   inc(n, 10);
+   writeln "n = ", n;
+
+end.

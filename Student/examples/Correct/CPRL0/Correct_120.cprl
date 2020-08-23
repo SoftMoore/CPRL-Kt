@@ -1,0 +1,19 @@
+// test not expression
+// output should be as follows:
+// x <= 10
+
+var x : Integer;
+var b : Boolean;
+
+begin
+
+   x := 5;
+   b := not (x <= 10);
+
+   if b then
+       writeln("not (x <= 10)");
+   else
+       writeln("x <= 10");
+   end if;
+
+end.

@@ -1,0 +1,16 @@
+type T = array[10] of Integer;
+type T1 = array[10] of Integer;
+type T2 = array[10] of T1;
+
+var a : T;
+var b : T2;
+var c : Integer;
+
+begin
+
+    a[1][2] := 3;     // a[1] is not an array
+    b[1] := 3;        // b[1] is an array, not an integer
+    c := b[1][2][3];  // b[1][2] is not an array
+    c := b[1];        // b[1] is an array, not an integer
+
+end.

@@ -1,0 +1,34 @@
+   0:  PROGRAM 2
+   5:  BR 75
+  10:  PROC 0
+  15:  LDLADDR -4
+  20:  LOADW
+  21:  LOAD2B
+  22:  PUTCH
+  23:  LDCSTR  "   "
+  34:  PUTSTR
+  35:  LDLADDR -4
+  40:  LOADW
+  41:  LDCCH 'B'
+  44:  STORE2B
+  45:  LDLADDR -4
+  50:  LOADW
+  51:  LOAD2B
+  52:  PUTCH
+  53:  LDCSTR  "   "
+  64:  PUTSTR
+  65:  LDLADDR -4
+  70:  LOADW
+  71:  LDCCH 'C'
+  74:  STORE2B
+  75:  RET 4
+  80:  LDGADDR 0
+  85:  LDCCH 'A'
+  88:  STORE2B
+  89:  LDGADDR 0
+  94:  CALL -84
+  99:  LDGADDR 0
+ 104:  LOAD2B
+ 105:  PUTCH
+ 106:  PUTEOL
+ 107:  HALT

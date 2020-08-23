@@ -1,0 +1,10 @@
+   var x, y : Integer;
+
+begin
+   write "Enter value for x: ";
+   read x;
+   write "Enter value for y: ";
+   read y;
+
+   writeln "x + y = ", x + y;
+end.

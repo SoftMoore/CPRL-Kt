@@ -1,0 +1,49 @@
+   PROGRAM 8
+   LDGADDR 0
+   LDCINT 1
+   STOREW
+L0:
+   LDGADDR 0
+   LDGADDR 0
+   LOADW
+   LDCINT 1
+   ADD
+   STOREW
+   LDGADDR 4
+   LDGADDR 0
+   LOADW
+   STOREW
+L2:
+   LDGADDR 4
+   LDGADDR 4
+   LOADW
+   LDCINT 2
+   ADD
+   STOREW
+   LDGADDR 4
+   LOADW
+   LDCINT 10
+   CMP
+   BG L3
+   BR L2
+L3:
+   LDGADDR 0
+   LOADW
+   LDCINT 6
+   CMP
+   BZ L1
+   BR L0
+L1:
+   LDCSTR "x = "
+   PUTSTR
+   LDGADDR 0
+   LOADW
+   PUTINT
+   PUTEOL
+   LDCSTR "y = "
+   PUTSTR
+   LDGADDR 4
+   LOADW
+   PUTINT
+   PUTEOL
+   HALT

@@ -1,0 +1,8 @@
+edu.citadel.compiler
+edu.citadel.compiler.util
+edu.citadel.cprl
+edu.citadel.cprl.ast
+edu.citadel.cvm
+edu.citadel.cvm.assembler
+edu.citadel.cvm.assembler.ast
+edu.citadel.cvm.assembler.optimize

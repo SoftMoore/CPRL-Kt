@@ -1,0 +1,8 @@
+var x, y : Integer;
+
+begin
+
+   y := -5;
+   x := y + z;   // z has not been declared
+
+end.

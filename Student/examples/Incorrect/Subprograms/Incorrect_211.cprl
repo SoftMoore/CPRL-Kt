@@ -1,0 +1,19 @@
+var x : Integer;
+
+function f(b : Boolean) return Integer is
+begin
+
+   if b then
+      return 1;
+   else
+      return -1;
+   end if;
+
+end g;   // incorrect name at end of function
+
+begin
+
+   x := f(true);
+   writeln x;
+
+end.

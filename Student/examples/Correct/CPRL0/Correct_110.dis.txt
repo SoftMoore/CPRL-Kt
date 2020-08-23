@@ -1,0 +1,42 @@
+   0:  PROGRAM 4
+   5:  LDCSTR  "Enter an integer (0 to exit): "
+  70:  PUTSTR
+  71:  LDGADDR 0
+  76:  GETINT
+  77:  STOREW
+  78:  LDGADDR 0
+  83:  LOADW
+  84:  LDCINT0
+  85:  CMP
+  86:  BGE 48
+  91:  LDGADDR 0
+  96:  LOADW
+  97:  PUTINT
+  98:  LDCSTR  " is negative"
+ 127:  PUTSTR
+ 128:  PUTEOL
+ 129:  BR 91
+ 134:  LDGADDR 0
+ 139:  LOADW
+ 140:  LDCINT0
+ 141:  CMP
+ 142:  BNZ 40
+ 147:  LDGADDR 0
+ 152:  LOADW
+ 153:  PUTINT
+ 154:  LDCSTR  " is zero"
+ 175:  PUTSTR
+ 176:  PUTEOL
+ 177:  BR 43
+ 182:  LDGADDR 0
+ 187:  LOADW
+ 188:  PUTINT
+ 189:  LDCSTR  " is positive"
+ 218:  PUTSTR
+ 219:  PUTEOL
+ 220:  LDGADDR 0
+ 225:  LOADW
+ 226:  LDCINT0
+ 227:  CMP
+ 228:  BNZ -223
+ 233:  HALT

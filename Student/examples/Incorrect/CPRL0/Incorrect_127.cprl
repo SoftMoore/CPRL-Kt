@@ -1,0 +1,19 @@
+var i : Integer;
+var c : Char;
+
+begin
+
+   i := 1;
+   c := 'c';
+
+   if i = c // Not both same type
+   then
+     writeln "bogus";
+   end if;
+
+   if "c" = "c"  // Not both scalar
+   then
+     writeln "bogus";
+   end if;
+
+end.

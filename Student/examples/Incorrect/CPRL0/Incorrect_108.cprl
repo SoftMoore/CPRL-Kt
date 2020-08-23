@@ -1,0 +1,10 @@
+var x : Integer;
+
+begin
+
+   x := 3;
+   if x + 2 then   // x + 2 is not a Boolean expression
+      x := x + 1;
+   end if;
+
+end.

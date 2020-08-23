@@ -1,0 +1,8 @@
+var x : Integer;
+
+begin
+
+   x := 12;
+   exit when x = 12;   // exit not enclosed in a loop
+
+end.

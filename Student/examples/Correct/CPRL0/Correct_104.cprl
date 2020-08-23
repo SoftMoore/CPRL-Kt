@@ -1,0 +1,20 @@
+// tests that constant declarations can be intermixed with
+// variable declarations
+// correct output is as follows:
+//    1
+//    5
+//    3
+
+var   a : Integer;
+const b := 5;
+var   c : Integer;
+
+begin
+   a := 1;
+   c := 3;
+   writeln a;
+   writeln b;
+   writeln c;
+end.
+
+

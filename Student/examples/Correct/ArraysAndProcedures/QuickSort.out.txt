@@ -1,0 +1,4 @@
+initial array:
+0  2  99  6  8  10  12  -1  16  5  
+sorted array:
+-1  0  2  5  6  8  10  12  16  99  

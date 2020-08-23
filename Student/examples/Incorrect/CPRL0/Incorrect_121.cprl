@@ -1,0 +1,8 @@
+var x : Boolean;
+
+begin
+
+   read x;      // input not supported for type Boolean
+   writeln(x);
+
+end.

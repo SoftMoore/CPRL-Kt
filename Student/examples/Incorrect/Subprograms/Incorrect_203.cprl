@@ -1,0 +1,10 @@
+var   x : Integer;
+
+procedure inc(var n : Integer)   // missing "is"
+begin
+   n := n + 1;
+end inc;
+
+begin
+   inc(x);
+end.

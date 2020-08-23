@@ -1,0 +1,11 @@
+   0:  BR 26
+   5:  PROC 0
+  10:  LDLADDR -4
+  15:  LDCINT 42
+  20:  STOREW
+  21:  RET 0
+  26:  ALLOC 4
+  31:  CALL -26
+  36:  PUTINT
+  37:  PUTEOL
+  38:  HALT

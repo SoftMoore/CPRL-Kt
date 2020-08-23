@@ -1,0 +1,3 @@
+Enter an integer (0 to exit): -99 is negative
+Enter an integer (0 to exit): 51 is positive
+Enter an integer (0 to exit): 0 is zero

@@ -1,0 +1,25 @@
+initializing...
+
+starting main loop...
+
+line:  2   char:  1   token: <
+line:  2   char:  2   token: >
+*** Lexical error detected near line 2, character 6:
+    Invalid character '!'
+line:  2   char:  6   token: Unknown
+*** Lexical error detected near line 2, character 10:
+    Invalid character '?'
+line:  2   char: 10   token: Unknown
+*** Lexical error detected near line 2, character 14:
+    Invalid character '!'
+line:  2   char: 14   token: Unknown
+line:  2   char: 15   token: Identifier -> done
+*** Lexical error detected near line 2, character 22:
+    Invalid character '#'
+line:  2   char: 22   token: Unknown
+*** Lexical error detected near line 2, character 26:
+    Invalid character '@'
+line:  2   char: 26   token: Unknown
+line:  3   char:  1   token: End-of-File
+
+...done

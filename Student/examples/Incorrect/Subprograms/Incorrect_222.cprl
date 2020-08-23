@@ -1,0 +1,20 @@
+const n := 5;
+var   x : Integer;
+
+procedure f(b : Boolean) is
+begin
+
+   if b then
+      return n;   // return expression not allowed for procedures
+   else
+      writeln -1;
+   end if;
+
+end f;
+
+begin
+
+   f(true);
+   write x;
+
+end.

@@ -1,0 +1,19 @@
+var x : Integer;
+
+function f(n : Integer) return Integer is
+begin
+
+   if n > 5 then
+      return true;    // incorrect return type
+   else
+      return n + 1;
+   end if;
+
+end f;
+
+begin
+
+   x := f(12);
+   writeln x;
+
+end.

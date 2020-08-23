@@ -1,0 +1,4 @@
+   0:  LDCSTR  "Non-ASCII Characters: €ö??=é"
+  61:  PUTSTR
+  62:  PUTEOL
+  63:  HALT

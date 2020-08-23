@@ -1,0 +1,25 @@
+   PROGRAM 4
+   LDGADDR 0
+   LDCINT 1
+   STOREW
+L0:
+   LDGADDR 0
+   LOADW
+   LDCINT 5
+   CMP
+   BG L1
+   LDGADDR 0
+   LDGADDR 0
+   LOADW
+   LDCINT 1
+   ADD
+   STOREW
+   BR L0
+L1:
+   LDCSTR "x = "
+   PUTSTR
+   LDGADDR 0
+   LOADW
+   PUTINT
+   PUTEOL
+   HALT

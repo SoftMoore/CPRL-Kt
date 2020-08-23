@@ -1,0 +1,14 @@
+var x : Integer;
+
+begin
+
+   x := 1;
+
+   loop
+      x := x + 1;
+      exit when x;      // when expression should be boolean
+   end loop;
+
+   writeln "x = ", x;
+
+end.

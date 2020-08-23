@@ -1,0 +1,22 @@
+// test relational expressions on boolean and character values
+// output should be as follows:
+// false < true
+// 'a' < 'b'
+
+var x, y : Integer;
+
+begin
+
+   if false < true then
+      writeln "false < true";
+   else
+      writeln "false >= true";
+   end if;
+
+   if 'a' < 'b' then
+      writeln "'a' < 'b'";
+   else
+      writeln "'a' >= 'b'";
+   end if;
+
+end.

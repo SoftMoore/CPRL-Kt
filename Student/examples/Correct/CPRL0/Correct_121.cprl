@@ -1,0 +1,18 @@
+// test short-circuit evaluation
+// output should be as follows:
+// 0
+
+var x, y : Integer;
+
+begin
+
+   x := 5;
+   y := 0;
+
+   if y != 0 and x/y < 10 then   // should never divide by y
+      writeln x;
+   else
+      writeln y;
+   end if;
+
+end.

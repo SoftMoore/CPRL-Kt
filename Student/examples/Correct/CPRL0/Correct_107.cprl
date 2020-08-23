@@ -1,0 +1,37 @@
+// run this program with inputs of -10, 0, 2, and 9
+// correct output is as follows:
+//  -10 |    FALSE    2   -1    0
+//    0 |    FALSE    0    0    0
+//    2 |    FALSE    2    1    0
+//    9 |    TRUE     9    1    1
+const i := 7;
+const f := false;
+var x, y, z : Integer;
+var continue : Boolean;
+
+begin
+   write "Enter x:  ";
+   read x;
+   z := x mod 2;
+   continue := x > i;
+
+   if x < 0 then
+      y := -1;
+      loop
+         x := x + i/3;
+         exit when x > 0;
+      end loop;
+   elsif x = 0 then
+      y := 0;
+   else
+      y := 1;
+   end if;
+
+   if continue and not f then
+      write "TRUE   ";
+   else
+      write "FALSE   ";
+   end if;
+
+   writeln x, "   ", y, "   ", z;
+end.

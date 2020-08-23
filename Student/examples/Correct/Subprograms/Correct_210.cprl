@@ -1,0 +1,44 @@
+// Correct output is as follows:
+// for inputs 3 and 7: lessThan(3, 7) = true
+// for inputs 7 and 2: lessThan(3, 7) = false
+// for inputs 4 and 4: lessThan(3, 7) = false
+
+var a, b : Integer;
+
+function lessThan(x : Integer, y : Integer) return Boolean is
+begin
+   return x < y;
+end lessThan;
+
+procedure writeBoolean(b : Boolean) is
+begin
+   if b then
+      write "true";
+   else
+      write "false";
+   end if;
+end writeBoolean;
+
+begin
+
+   loop
+      write "Enter value for a (0 to exit):  ";
+      read a;
+      writeln "a = ", a;
+
+      exit when a = 0;
+
+      write "Enter value for b:  ";
+      read b;
+      writeln "b = ", b;
+
+      writeln;
+      write "lessThan(", a, ", ", b, ") = ";
+      writeBoolean(lessThan(a, b));
+      writeln;
+      writeln;
+   end loop;
+
+   writeln "Done.";
+
+end.

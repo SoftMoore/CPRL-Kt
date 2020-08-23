@@ -1,0 +1,22 @@
+// one procedure calling a second procedure with a var parameter
+// output should be:
+// x = 15
+
+var x : Integer;
+
+procedure p2(var n : Integer) is
+begin
+   n := n + 3;
+end p2;
+
+procedure p1(var n : Integer) is
+begin
+   n := n + 5;
+   p2(n);
+end p1;
+
+begin
+   x := 7;
+   p1(x);
+   writeln "x = ", x;
+end.

@@ -1,0 +1,19 @@
+var x : Integer;
+
+function f(var b : Boolean) return Integer is   // function can't have a var parameter
+begin
+
+   if b then
+      return 1;
+   else
+      return -1;
+   end if;
+
+end f;
+
+begin
+
+   x := f(true);
+   write x;
+
+end.

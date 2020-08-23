@@ -1,0 +1,26 @@
+// correct output is:   3    -1    2187
+const one := 1;
+const two := 2;
+var y, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12,
+    x13, x14 : Integer;
+
+begin
+   x1  := one;
+   x2  := two;
+   x3  := one;
+   x4  := two;
+   x5  := one;
+   x6  := two;
+   x7  := one;
+   x8  := two;
+   x9  := one;
+   x10 := two;
+   x11 := one;
+   x12 := two;
+   x13 := one;
+   x14 := two;
+
+   y := (x1 + x2)*((x3 + x4)*((x5 + x6)*((x7 + x8)*
+        ((x9 + x10)*((x11 + x12)*(x13 + x14))))));
+   write one + two, "    ", -1, "    ", y;
+end.

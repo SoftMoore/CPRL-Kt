@@ -1,0 +1,22 @@
+// tests explicit return from a procedure
+// Output should be:
+// n = 13
+
+var n : Integer;
+
+procedure inc(var x : Integer, ub : Integer) is
+begin
+   if x < ub then
+      x := x + 1;
+   else
+      return;
+   end if;
+end inc;
+
+begin
+
+   n := 13;
+   inc(n, 10);
+   writeln "n = ", n;
+
+end.

@@ -1,0 +1,17 @@
+Enter value for a (0 to exit):  a = 3
+Enter value for b:  b = 7
+
+lessThan(3, 7) = true
+
+Enter value for a (0 to exit):  a = 7
+Enter value for b:  b = 2
+
+lessThan(7, 2) = false
+
+Enter value for a (0 to exit):  a = 4
+Enter value for b:  b = 4
+
+lessThan(4, 4) = false
+
+Enter value for a (0 to exit):  a = 0
+Done.

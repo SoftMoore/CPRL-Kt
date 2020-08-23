@@ -1,0 +1,26 @@
+initializing...
+
+starting main loop...
+
+line:  2   char:  1   token: String Literal -> "string with a backspace       (\b) in the middle"
+line:  3   char:  1   token: String Literal -> "string with a tab             (\t) in the middle"
+line:  4   char:  1   token: String Literal -> "string with a newline (lf)    (\n) in the middle"
+line:  5   char:  1   token: String Literal -> "string with a form feed       (\f) in the middle"
+line:  6   char:  1   token: String Literal -> "string with a carriage return (\r) in the middle"
+line:  7   char:  1   token: String Literal -> "string with a double quote    (\") in the middle"
+line:  8   char:  1   token: String Literal -> "string with a single quote    (\') in the middle"
+line:  9   char:  1   token: String Literal -> "string with a backslash pair  (\\) in the middle"
+line: 10   char:  1   token: String Literal -> "string with a cr/lf           (\r\n) in the middle"
+line: 13   char:  1   token: String Literal -> "\" this string begins with a quote"
+line: 16   char:  1   token: String Literal -> ""
+line: 19   char:  1   token: Character Literal -> '\b'
+line: 20   char:  1   token: Character Literal -> '\t'
+line: 21   char:  1   token: Character Literal -> '\n'
+line: 22   char:  1   token: Character Literal -> '\f'
+line: 23   char:  1   token: Character Literal -> '\r'
+line: 24   char:  1   token: Character Literal -> '\"'
+line: 25   char:  1   token: Character Literal -> '\''
+line: 26   char:  1   token: Character Literal -> '\\'
+line: 28   char:  1   token: End-of-File
+
+...done

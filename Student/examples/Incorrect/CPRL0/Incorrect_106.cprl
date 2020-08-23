@@ -1,0 +1,19 @@
+// multiple syntax errors to check error recovery
+
+const a := 1;
+const b := 2;
+const c :=  ;      // missing expression
+const d := 4;
+
+var x : Integer;
+var y : boolean;   // "boolean" should start with a capital "B"
+
+begin  // test3
+
+   if = 2 then        // invalid expression
+      x := 1;
+   else
+      d := 5;         // attempt to assign to a constant
+   end if;
+
+end.

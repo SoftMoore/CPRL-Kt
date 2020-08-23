@@ -1,0 +1,11 @@
+const five := 5;
+var x : Integer;
+
+begin
+
+   x := 3;
+   x = x + 1;        // used "=" instead of ":="
+   five := 7;        // attempt to assign to a constant
+   writeln(x + five);
+
+end.

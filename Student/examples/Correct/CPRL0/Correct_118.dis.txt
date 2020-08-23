@@ -1,0 +1,7 @@
+   0:  LDCSTR  "string with \\n: \nremaining text."
+  69:  PUTSTR
+  70:  PUTEOL
+  71:  LDCSTR  "string with \\t: \tremaining text."
+ 140:  PUTSTR
+ 141:  PUTEOL
+ 142:  HALT

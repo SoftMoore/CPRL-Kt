@@ -1,0 +1,33 @@
+starting main loop...
+
+*** Lexical error detected near line 4, character 1:
+    Char and String literals can not extend past end of line.
+line:  4   char:  1   token: Unknown
+*** Lexical error detected near line 7, character 1:
+    Char and String literals can not extend past end of line.
+line:  7   char:  1   token: Unknown
+*** Lexical error detected near line 10, character 1:
+    Invalid Char literal.
+line: 10   char:  1   token: Unknown
+line: 10   char:  3   token: Identifier -> b
+*** Lexical error detected near line 10, character 4:
+    Char and String literals can not extend past end of line.
+line: 10   char:  4   token: Unknown
+*** Lexical error detected near line 13, character 1:
+    Invalid Char literal.
+line: 13   char:  1   token: Unknown
+*** Lexical error detected near line 16, character 2:
+    Illegal escape character.
+line: 16   char:  1   token: Character Literal -> '\x'
+*** Lexical error detected near line 19, character 4:
+    Illegal escape character.
+line: 19   char:  1   token: String Literal -> "ab\cdef"
+*** Lexical error detected near line 22, character 1:
+    Invalid Char literal.
+line: 22   char:  1   token: Unknown
+*** Lexical error detected near line 25, character 1:
+    Char and String literals can not extend past end of line.
+line: 25   char:  1   token: Unknown
+line: 26   char:  1   token: End-of-File
+
+...done

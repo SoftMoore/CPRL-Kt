@@ -1,0 +1,12 @@
+Enter value for a (0 to exit):  a = -12
+Enter value for b:  b = 15
+
+GCD(-12, 15) = 3
+
+Enter value for a (0 to exit):  a = 9
+Enter value for b:  b = -12
+
+GCD(9, -12) = 3
+
+Enter value for a (0 to exit):  a = 0
+Done.

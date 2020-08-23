@@ -1,0 +1,34 @@
+// Output should be
+// true
+// false
+// true
+// false
+// false
+// true
+// true
+// false
+
+var b1, b2 : Boolean;
+
+procedure print(b : Boolean) is
+begin
+   if (b) then
+      writeln("true");
+   else
+      writeln("false");
+   end if;
+end print;
+
+begin
+   b1 := true;
+   b2 := true;
+
+   print(b1);
+   print(not b1);
+   print(b1 and b2);
+   print(b1 and not b2);
+   print(not b1 and not b2);
+   print(b1 or b2);
+   print(b1 or not b2);
+   print(not b1 or not b2);
+end.

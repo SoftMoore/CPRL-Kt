@@ -1,0 +1,19 @@
+   0:  PROGRAM 4
+   5:  BR 49
+  10:  PROC 4
+  15:  LDLADDR 8
+  20:  LDGADDR 0
+  25:  LOADW
+  26:  STOREW
+  27:  LDCSTR  "n = "
+  40:  PUTSTR
+  41:  LDLADDR 8
+  46:  LOADW
+  47:  PUTINT
+  48:  PUTEOL
+  49:  RET 0
+  54:  LDGADDR 0
+  59:  LDCINT 5
+  64:  STOREW
+  65:  CALL -55
+  70:  HALT

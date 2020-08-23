@@ -1,0 +1,11 @@
+// function with a constraint error in initial declarations
+
+function f return Integer is
+  const big := 9999999999999;   // literal is too large for Integer
+begin
+   return big;
+end f;
+
+begin
+   writeln f;
+end.

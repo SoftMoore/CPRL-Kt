@@ -1,0 +1,16 @@
+ // Output should be
+ // n = 5
+
+ var x : Integer;
+
+ procedure p is
+     var n : Integer;
+ begin
+     n := x;
+     writeln "n = ", n;
+ end p;
+
+begin
+    x := 5;
+    p;
+end.

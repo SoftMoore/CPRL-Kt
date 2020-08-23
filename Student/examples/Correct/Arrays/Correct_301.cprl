@@ -1,0 +1,24 @@
+const arraySize := 10;
+
+type A = array[arraySize] of Integer;
+
+var i : Integer;
+var a : A;
+
+begin
+
+   // initialize array
+   i := 0;
+   while i < arraySize loop
+      a[i] := 2*i;
+      i := i + 1;
+   end loop;
+
+   // print values in the array
+   i := 0;
+   while i < arraySize loop
+      writeln a[i];
+      i := i + 1;
+   end loop;
+
+end.

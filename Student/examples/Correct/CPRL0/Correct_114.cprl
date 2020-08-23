@@ -1,0 +1,24 @@
+// Tests nested loops.
+// Correct output is as follows:
+// for input 1,  1:  i = 12, j = 11
+// for input 2,  8:  i = 13, j = 12
+// for input 21, 3:  i = 21, j = 3
+
+var i, j : Integer;
+
+begin
+   write "Enter value for i: ";
+   read i;
+   write "Enter value for j: ";
+   read j;
+
+   while i <= 10 loop
+      while j <= 10 loop
+         i := i + 1;
+         j := j + 2;
+      end loop;
+      i := i + 3;
+   end loop;
+
+   writeln "i = ", i, ", j = ", j;
+end.

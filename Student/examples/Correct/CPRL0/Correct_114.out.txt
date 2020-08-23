@@ -1,0 +1,1 @@
+Enter value for i: Enter value for j: i = 13, j = 12

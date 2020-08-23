@@ -1,0 +1,16 @@
+function f(n : Integer) return Integer is
+begin
+
+   if n > 5 then
+      return;       // return statement does not return a value
+   else
+      return -1;
+   end if;
+
+end f;
+
+begin
+
+   writeln f(3);
+
+end.

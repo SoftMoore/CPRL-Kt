@@ -1,0 +1,15 @@
+// output should be "x = 6"
+
+var x : Integer;
+
+begin
+   x := 1;
+
+   loop
+      x := x + 1;
+      exit when x = 6;
+   end loop;
+
+   writeln "x = ", x;
+end.
+

@@ -1,0 +1,37 @@
+// Tests arrays of arrays
+// Correct output is as follows:
+// 0  0  0  0  0  0  0  0  0  0
+// 1  2  3  4  5  6  7  8  9  10
+// 2  4  6  8  10  12  14  16  18  20
+// 3  6  9  12  15  18  21  24  27  30
+
+type A = array[10] of Integer;
+type B = array[4] of A;
+
+var i, j : Integer;
+var x : B;
+
+begin
+
+   i := 0;
+   while i < 4 loop
+      j := 0;
+      while j < 10 loop
+         x[i][j] := i*(j + 1);
+         j := j + 1;
+      end loop;
+      i := i + 1;
+   end loop;
+
+   i := 0;
+   while i < 4 loop
+      j := 0;
+      while j < 10 loop
+         write x[i][j], "  ";
+         j := j + 1;
+      end loop;
+      writeln;
+      i := i + 1;
+   end loop;
+
+end.

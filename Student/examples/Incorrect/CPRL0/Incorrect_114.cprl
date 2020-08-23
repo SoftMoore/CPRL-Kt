@@ -1,0 +1,7 @@
+var c : Char;
+
+begin
+
+   c := -3;        // assign Integer value to a Char
+
+end.

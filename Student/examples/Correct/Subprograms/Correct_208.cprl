@@ -1,0 +1,29 @@
+// Output should be
+// x = 6
+// n = 6
+// x = 6
+// n = 7
+// x = 6
+
+var x : Integer;
+
+procedure p2(n : Integer) is
+begin
+   n := n + 1;
+   writeln "x = ", x;
+   writeln "n = ", n;
+end p2;
+
+procedure p1(var n : Integer) is
+begin
+   n := n + 1;
+   writeln "x = ", x;
+   writeln "n = ", n;
+   p2(n);
+end p1;
+
+begin
+   x := 5;
+   p1(x);
+   writeln "x = ", x;
+end.

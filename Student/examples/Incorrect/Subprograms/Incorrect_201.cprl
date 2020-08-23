@@ -1,0 +1,23 @@
+var   x, y : Boolean;
+var   n : Integer;
+
+function f(b : Boolean) return Integer is
+begin
+
+  if b then
+     return 1;
+  else
+     return -1;
+  end if;
+
+end f;
+
+begin
+
+   y := f(x);       // incorrect return type for assignment
+   write y;
+
+   n := f(x);       // no error -- checking error recovery
+   write n;
+
+end.

@@ -1,0 +1,21 @@
+Enter value for a (0 to exit):  a = 9
+
+Enter value for b:  b = 12
+
+GCD(9, 12) = 3
+
+Enter value for a (0 to exit):  a = 99
+
+Enter value for b:  b = 100
+
+GCD(99, 100) = 1
+
+Enter value for a (0 to exit):  a = 15
+
+Enter value for b:  b = 25
+
+GCD(15, 25) = 5
+
+Enter value for a (0 to exit):  a = 0
+
+Done.

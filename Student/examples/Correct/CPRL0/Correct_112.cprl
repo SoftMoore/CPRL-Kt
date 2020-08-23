@@ -1,0 +1,35 @@
+// tests most features of the language CPRL/0
+// Correct output is as follows:
+// 0
+// 1
+// even
+// odd
+// even
+// odd
+
+var x, y : Integer;
+
+const five := 5;
+const T    := true;
+
+begin
+   writeln not T;
+   writeln not false;
+
+   x := five;
+   y := 2*x - 1;
+
+   while x <= 2*five loop
+      x := x + 1;
+
+      if x mod 2 = 0 then
+         writeln "even";
+      elsif x mod 2 = 1 then
+         writeln "odd";
+      else
+         writeln "weird";
+      end if;
+
+      exit when x = 9;
+   end loop;
+end.

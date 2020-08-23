@@ -1,0 +1,23 @@
+// test nested loops with both having an exit statement
+
+var x, y : Integer;
+
+begin
+   x := 1;
+
+   loop
+      x := x + 1;
+      y := x;
+
+      loop
+         y := y + 2;
+         exit when y > 10;
+      end loop;
+
+      exit when x = 6;
+   end loop;
+
+   writeln "x = ", x;
+   writeln "y = ", y;
+end.
+

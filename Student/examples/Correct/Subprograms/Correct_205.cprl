@@ -1,0 +1,17 @@
+// test scopes
+// output should be:   1    5
+
+var x : Integer;
+
+procedure p is
+   var x : Boolean;
+begin
+   x := true;
+   write x, "   ";
+end p;
+
+begin
+   x := 5;
+   p;
+   writeln x;
+end.

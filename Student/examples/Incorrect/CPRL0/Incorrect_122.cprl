@@ -1,0 +1,11 @@
+begin
+
+   // The following are valid.
+   writeln "string with \\n: \nremaining text.";
+   writeln "string with \\t: \tremaining text.";
+
+   // The following should not compile!
+   writeln "string with \\a: \aremaining text.";
+   writeln "string with \\x: \xremaining text.";
+
+end.

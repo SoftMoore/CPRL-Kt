@@ -1,0 +1,13 @@
+var x : Integer;
+
+begin
+
+   x := 1;
+
+   while 2 + 2 loop   // while expression is not boolean
+      x := x + 1;
+   end loop;
+
+   writeln "x = ", x;
+
+end.

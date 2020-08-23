@@ -1,0 +1,3 @@
+Enter value for n1:  Enter value for n2:  n1 = 0;  n2 = 7
+b1 and b2 = false
+b1 or  b2 = true
