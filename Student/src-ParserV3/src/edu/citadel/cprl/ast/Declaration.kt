@@ -15,10 +15,11 @@ import edu.citadel.cprl.Type
 abstract class Declaration(val idToken : Token, var type : Type = Type.none) : AST()
   {
     /**
-     * Returns the position of this declaration, which is
-     * simply the position of the identifier token.
+     * The position of this declaration, which is simply the
+     * position of the identifier token.
      */
-    fun getPosition() : Position = idToken.position
+    val position : Position
+        get() = idToken.position
 
 
     // Note: Most declarations do not require code generation.
