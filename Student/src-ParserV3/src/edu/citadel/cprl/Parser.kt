@@ -194,8 +194,7 @@ class Parser (private val scanner : Scanner)
             val varType = parseTypeName()
             match(Symbol.semicolon)
 
-            val scopeLevel = idTable.getCurrentLevel()
-            val varDecl = VarDecl(identifiers, varType, scopeLevel)
+            val varDecl = VarDecl(identifiers, varType, idTable.scopeLevel)
 
             for (decl in varDecl.singleVarDecls)
                 idTable.add(decl)

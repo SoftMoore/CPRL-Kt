@@ -18,13 +18,18 @@ class IdTable
     private val table : ArrayList<HashMap<String, Declaration>> = ArrayList(INITIAL_SCOPE_LEVELS)
     private var currentLevel : Int = 0
 
+    /**
+     * The current scope level (computed property).
+     */
+    val scopeLevel : ScopeLevel
+        get() = if (currentLevel == 0) ScopeLevel.PROGRAM else ScopeLevel.SUBPROGRAM
+
 
     /**
      * Initialize an empty identifier table with scope level initialized to 0.
      */
     init
       {
-        currentLevel = 0
         table.add(currentLevel, HashMap())
       }
 
@@ -99,11 +104,4 @@ class IdTable
 
         return decl
       }
-
-
-    /**
-     * Returns the current scope level.
-     */
-    fun getCurrentLevel() : ScopeLevel =
-            if (currentLevel == 0) ScopeLevel.PROGRAM else ScopeLevel.SUBPROGRAM
   }

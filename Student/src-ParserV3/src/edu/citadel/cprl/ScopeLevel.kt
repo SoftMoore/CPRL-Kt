@@ -14,8 +14,5 @@ enum class ScopeLevel(val text : String)
      * Returns a "nice" string for the name of the scope level.  For
      * example, this method returns "Program" instead of PROGRAM.
      */
-    override fun toString() : String
-      {
-        return text
-      }
+    override fun toString() = text
   }
