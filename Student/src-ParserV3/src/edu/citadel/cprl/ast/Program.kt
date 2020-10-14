@@ -15,7 +15,7 @@ class Program(private val declPart : DeclarativePart = DeclarativePart(),
 
 
     // label for first program statement (used during code generation)
-    private val L1 = getNewLabel()
+    private val L1 : String = getNewLabel()
 
 
     override fun checkConstraints()

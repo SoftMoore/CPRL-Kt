@@ -88,71 +88,84 @@ enum class Symbol(val label : String)
     unknown("Unknown");
 
 
-    fun isReservedWord() = this in BooleanRW..writelnRW
+    /**
+     * Returns true if this symbol is a CPRL reserved word.
+     */
+    fun isReservedWord() : Boolean
+        = this in BooleanRW..writelnRW
 
 
     /**
      * Returns true if this symbol can start an initial declaration.
      */
-    fun isInitialDeclStarter() = this == constRW || this == varRW || this == typeRW
+    fun isInitialDeclStarter() : Boolean
+        = this == constRW || this == varRW || this == typeRW
 
 
     /**
      * Returns true if this symbol can start a subprogram declaration.
      */
-    fun isSubprogramDeclStarter() = this == procedureRW || this == functionRW
+    fun isSubprogramDeclStarter() : Boolean
+        = this == procedureRW || this == functionRW
 
 
     /**
      * Returns true if this symbol can start a statement.
      */
-    fun isStmtStarter() = this == exitRW  || this == identifier || this == ifRW
-                       || this == loopRW  || this == whileRW    || this == readRW
-                       || this == writeRW || this == writelnRW  || this == returnRW
+    fun isStmtStarter() : Boolean
+        =    this == exitRW  || this == identifier || this == ifRW
+          || this == loopRW  || this == whileRW    || this == readRW
+          || this == writeRW || this == writelnRW  || this == returnRW
 
 
     /**
      * Returns true if this symbol is a logical operator.
      */
-    fun isLogicalOperator() = this == andRW || this == orRW
+    fun isLogicalOperator() : Boolean
+        = this == andRW || this == orRW
 
 
     /**
      * Returns true if this symbol is a relational operator.
      */
-    fun isRelationalOperator() = this == equals      || this == notEqual
-                              || this == lessThan    || this == lessOrEqual
-                              || this == greaterThan || this == greaterOrEqual
+    fun isRelationalOperator() : Boolean
+        =    this == equals      || this == notEqual
+          || this == lessThan    || this == lessOrEqual
+          || this == greaterThan || this == greaterOrEqual
 
 
     /**
      * Returns true if this symbol is an adding operator.
      */
-    fun isAddingOperator() = this == plus || this == minus
+    fun isAddingOperator() : Boolean
+        = this == plus || this == minus
 
 
     /**
      * Returns true if this symbol is a multiplying operator.
      */
-    fun isMultiplyingOperator() = this == times || this == divide || this == modRW
+    fun isMultiplyingOperator() : Boolean
+        = this == times || this == divide || this == modRW
 
 
     /**
      * Returns true if this symbol is a literal.
      */
-    fun isLiteral() = this == intLiteral || this == charLiteral || this == stringLiteral
-                   || this == trueRW     || this == falseRW
+    fun isLiteral() : Boolean
+        =    this == intLiteral || this == charLiteral || this == stringLiteral
+          || this == trueRW     || this == falseRW
 
 
     /**
      * Returns true if this symbol can start an expression.
      */
-    fun isExprStarter() = isLiteral()  || this == identifier || this == leftParen
-                       || this == plus || this == minus      || this == notRW
+    fun isExprStarter() : Boolean
+        =    isLiteral()  || this == identifier || this == leftParen
+          || this == plus || this == minus      || this == notRW
 
 
     /**
      * Returns the label for this Symbol.
      */
-    override fun toString() = label
+    override fun toString() : String = label
   }

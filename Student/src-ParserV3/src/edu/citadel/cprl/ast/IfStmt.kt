@@ -24,8 +24,8 @@ class IfStmt(private val booleanExpr : Expression,
     : Statement()
   {
     // labels used during code generation
-    private val L1 = getNewLabel()   // label of address at end of then statements
-    private val L2 = getNewLabel()   // label of address at end of if statement
+    private val L1 : String = getNewLabel()   // label of address at end of then statements
+    private val L2 : String = getNewLabel()   // label of address at end of if statement
 
 
     override fun checkConstraints()

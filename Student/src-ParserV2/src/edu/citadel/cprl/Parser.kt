@@ -749,30 +749,24 @@ class Parser(private val scanner : Scanner)
 
 
     /**
-     * Create a parser exception with the specified message and the
+     * Create a ParserException with the specified message and the
      * current scanner position.
      */
-    private fun error(errorMsg : String) : ParserException
-      {
-        return ParserException(scanner.position, errorMsg)
-      }
+    private fun error(message : String)
+        = ParserException(scanner.position, message)
 
 
     /**
-     * Create a parser exception with the specified error position and message.
+     * Create a ParserException with the specified error position and message.
      */
-    private fun error(errorPos : Position, errorMsg : String) : ParserException
-      {
-        return ParserException(errorPos, errorMsg)
-      }
+    private fun error(errorPosition : Position, message : String)
+        = ParserException(errorPosition, message)
 
 
     /**
      * Create an internal compiler exception with the specified message
      * and the current scanner position.
      */
-    private fun internalError(message : String) : InternalCompilerException
-      {
-        return InternalCompilerException(scanner.position, message)
-      }
+    private fun internalError(message : String)
+        = InternalCompilerException(scanner.position, message)
   }

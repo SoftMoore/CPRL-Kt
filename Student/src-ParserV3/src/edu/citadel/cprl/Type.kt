@@ -23,7 +23,7 @@ open class Type protected constructor(private val name : String, var size : Int 
     /**
      * Returns the name for this type.
      */
-    override fun toString() = name
+    override fun toString() : String = name
 
 
     override fun hashCode() : Int = name.hashCode()

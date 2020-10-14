@@ -19,7 +19,7 @@ class ElsifPart(private val booleanExpr : Expression, val thenStmts : List<State
     : AST()
   {
     lateinit var endIfLabel  : String
-    private val L1 = getNewLabel()    // label at end of thenStmts
+    private  val L1 : String = getNewLabel()    // label at end of thenStmts
 
 
     override fun checkConstraints()

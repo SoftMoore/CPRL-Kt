@@ -929,7 +929,8 @@ class Parser (private val scanner : Scanner)
      * Create a ParserException with the specified message and the
      * current scanner position.
      */
-    private fun error(message : String) = ParserException(scanner.position, message)
+    private fun error(message : String)
+        = ParserException(scanner.position, message)
 
 
     /**

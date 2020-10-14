@@ -49,7 +49,7 @@ abstract class AST
      /**
      * Returns true if the two types are assignment compatible.
      */
-    protected fun matchTypes(t1 : Type, t2 : Type) = t1 == t2
+    protected fun matchTypes(t1 : Type, t2 : Type) : Boolean = t1 == t2
 
 
     /**

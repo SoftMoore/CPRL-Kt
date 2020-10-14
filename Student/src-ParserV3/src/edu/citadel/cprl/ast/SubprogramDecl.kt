@@ -35,7 +35,7 @@ abstract class SubprogramDecl(subprogramId : Token) : Declaration(subprogramId)
     /**
      * The label associated with the first statement of the subprogram.
      */
-    val subprogramLabel = getNewLabel()
+    val subprogramLabel : String = getNewLabel()
 
     /**
      * Returns the number of bytes for all parameters.

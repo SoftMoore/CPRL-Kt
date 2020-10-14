@@ -12,17 +12,17 @@ import edu.citadel.cprl.Type
 /**
  * The abstract syntax tree node for a relational expression.  A relational
  * expression is a binary expression where the operator is a relational
- * operator such as "&lt;=" or "&gt;".  A simple example would be "x &lt; 5".
+ * operator such as "<=" or ">".  A simple example would be "x < 5".
  *
  * @constructor Construct a relational expression with the operator
- *              ("=", "&lt;=", etc.) and the two operands.
+ *              ("=", "<=", etc.) and the two operands.
  */
 class RelationalExpr(leftOperand : Expression, operator : Token, rightOperand : Expression)
     : BinaryExpr(leftOperand, operator, rightOperand)
   {
     // labels used during code generation
-    private val L1 = getNewLabel()   // label at start of right operand
-    private val L2 = getNewLabel()   // label at end of the relational expression
+    private val L1 : String = getNewLabel()   // label at start of right operand
+    private val L2 : String = getNewLabel()   // label at end of the relational expression
 
 
     /**

@@ -12,8 +12,8 @@ import edu.citadel.cprl.Type
 class LoopStmt : Statement()
   {
     // labels used during code generation
-    private val L1 = getNewLabel()   // label for start of loop
-    private val L2 = getNewLabel()   // label for end of loop
+    private val L1 : String = getNewLabel()   // label for start of loop
+    private val L2 : String = getNewLabel()   // label for end of loop
 
     var whileExpr  : Expression? = null
     var statements : List<Statement> = emptyList()
@@ -22,7 +22,7 @@ class LoopStmt : Statement()
     /**
      * Returns the label for the end of the loop statement.
      */
-    fun getExitLabel() = L2
+    fun getExitLabel() : String = L2
 
 
     override fun checkConstraints()

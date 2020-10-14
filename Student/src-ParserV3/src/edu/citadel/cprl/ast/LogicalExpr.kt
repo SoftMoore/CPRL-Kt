@@ -20,8 +20,8 @@ class LogicalExpr(leftOperand : Expression, operator : Token, rightOperand : Exp
     : BinaryExpr(leftOperand, operator, rightOperand)
   {
     // labels used during code generation for short-circuit version
-    private val L1  = getNewLabel()   // label at start of right operand
-    private val L2  = getNewLabel()   // label at end of logical expression
+    private val L1 : String = getNewLabel()   // label at start of right operand
+    private val L2 : String = getNewLabel()   // label at end of logical expression
 
 
     /**

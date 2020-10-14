@@ -10,8 +10,8 @@ import kotlin.system.exitProcess
  */
 object ErrorHandler
   {
-    private var err : PrintWriter = PrintWriter(System.err, true)
-    private var errorCount : Int = 0
+    private var err = PrintWriter(System.err, true)
+    private var errorCount = 0
 
 
     /**
@@ -33,7 +33,7 @@ object ErrorHandler
     /**
      * Returns true if errors have been reported by the error handler.
      */
-    fun errorsExist() = errorCount > 0
+    fun errorsExist() : Boolean = errorCount > 0
 
 
     /**
