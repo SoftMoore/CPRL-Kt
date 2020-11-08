@@ -46,33 +46,6 @@ class Scanner(private val source : Source)
           }
         private set
 
-    /**
-     * The position of the second symbol in the source file.
-     */
-    var peekPosition = Position()
-        get()
-          {
-            advancePeek()
-            return field
-          }
-        private set
-
-    /**
-     * The text of the second token in the source file;
-     * e.g., for identifiers or literals.
-     */
-    private var peekText = ""
-
-    /**
-     * The current token in the source file.
-     */
-    val peekToken : Token
-        get()
-          {
-            advancePeek()
-            return Token(peekSymbol, peekPosition, peekText)
-          }
-
     private var isPeekValid : Boolean = false
 
 
@@ -88,10 +61,7 @@ class Scanner(private val source : Source)
 
             advance()
 
-            // set values for peek properties
             peekSymbol = symbol
-            peekPosition = position
-            peekText = text
 
             // restore saved current values
             symbol = savedSymbol
@@ -113,11 +83,9 @@ class Scanner(private val source : Source)
       {
         if (isPeekValid)
           {
-            // peekToken was previously used as the second lookahead
-            // token and is now valid as the current token
+            // peekSymbol was previously used as the second lookahead
+            // symbol and is now valid as the current symbol
             symbol      = peekSymbol
-            position    = peekPosition
-            text        = peekText
             isPeekValid = false
           }
         else
