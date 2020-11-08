@@ -7,7 +7,7 @@ import java.io.IOException
 
 
 /**
- * A scanner for SEL with two-token lookahead.
+ * A scanner for SEL with two-symbol lookahead.
  */
 class Scanner(private val source : Source)
   {
