@@ -18,7 +18,7 @@ import edu.citadel.cprl.Type
  */
 open class Variable(val decl : NamedDecl,
                     position : Position,
-                    var indexExprs : List<Expression>)
+                    val indexExprs : List<Expression>)
     : Expression(decl.type, position)
   {
     /**
