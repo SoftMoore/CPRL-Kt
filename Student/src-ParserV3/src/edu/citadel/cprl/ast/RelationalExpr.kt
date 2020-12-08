@@ -86,14 +86,12 @@ class RelationalExpr(leftOperand : Expression, operator : Token, rightOperand : 
       {
         // Relational operators compare integers only, so we need to make sure
         // that we have enough bytes on the stack.  Pad with zero bytes.
-        val leftOperandSize = leftOperand.type.size
-        for (n in 1..Type.Integer.size - leftOperandSize)
+        for (n in 1..Type.Integer.size - leftOperand.type.size)
             emit("LDCB 0")
 
         leftOperand.emit()
 
-        val rightOperandSize = rightOperand.type.size
-        for (n in 1..Type.Integer.size - rightOperandSize)
+        for (n in 1..Type.Integer.size - rightOperand.type.size)
             emit("LDCB 0")
 
         rightOperand.emit()
