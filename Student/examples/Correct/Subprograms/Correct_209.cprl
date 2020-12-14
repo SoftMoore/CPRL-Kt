@@ -13,9 +13,9 @@ var b1, b2 : Boolean;
 procedure print(b : Boolean) is
 begin
    if (b) then
-      writeln("true");
+      writeln "true";
    else
-      writeln("false");
+      writeln "false";
    end if;
 end print;
 

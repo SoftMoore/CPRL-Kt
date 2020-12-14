@@ -22,11 +22,11 @@ begin
    // partition a[fromIndex]..a[toIndex] with pivot as the dividing item
    while i <= j loop
 
-      while (a[i] < pivot) loop
+      while a[i] < pivot loop
          i := i + 1;
       end loop;
 
-      while (a[j] > pivot) loop
+      while a[j] > pivot loop
          j := j - 1;
       end loop;
 

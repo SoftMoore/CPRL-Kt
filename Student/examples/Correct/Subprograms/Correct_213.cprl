@@ -7,7 +7,7 @@ var x, y : Integer;
 
 procedure p(var m : Integer, n : Integer) is
 begin
-   if (m < n) then
+   if m < n then
       return;
    else
       m := n + 3;

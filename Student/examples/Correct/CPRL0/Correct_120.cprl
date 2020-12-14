@@ -11,9 +11,9 @@ begin
    b := not (x <= 10);
 
    if b then
-       writeln("not (x <= 10)");
+       writeln "not (x <= 10)";
    else
-       writeln("x <= 10");
+       writeln "x <= 10";
    end if;
 
 end.
