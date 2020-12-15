@@ -9,32 +9,28 @@
   28:  LOADW
   29:  LDCINT0
   30:  CMP
-  31:  BZ 11
-  36:  LDCB1
-  37:  BR 6
-  42:  LDCB0
-  43:  BNZ 11
-  48:  LDCB0
-  49:  BR 36
-  54:  LDGADDR 0
-  59:  LOADW
-  60:  LDGADDR 4
-  65:  LOADW
-  66:  DIV
-  67:  LDCINT 10
-  72:  CMP
-  73:  BGE 11
-  78:  LDCB1
-  79:  BR 6
-  84:  LDCB0
-  85:  BZ 18
-  90:  LDGADDR 0
-  95:  LOADW
-  96:  PUTINT
-  97:  PUTEOL
-  98:  BR 13
- 103:  LDGADDR 4
- 108:  LOADW
- 109:  PUTINT
- 110:  PUTEOL
- 111:  HALT
+  31:  BNZ 11
+  36:  LDCB0
+  37:  BR 36
+  42:  LDGADDR 0
+  47:  LOADW
+  48:  LDGADDR 4
+  53:  LOADW
+  54:  DIV
+  55:  LDCINT 10
+  60:  CMP
+  61:  BGE 11
+  66:  LDCB1
+  67:  BR 6
+  72:  LDCB0
+  73:  BZ 18
+  78:  LDGADDR 0
+  83:  LOADW
+  84:  PUTINT
+  85:  PUTEOL
+  86:  BR 13
+  91:  LDGADDR 4
+  96:  LOADW
+  97:  PUTINT
+  98:  PUTEOL
+  99:  HALT

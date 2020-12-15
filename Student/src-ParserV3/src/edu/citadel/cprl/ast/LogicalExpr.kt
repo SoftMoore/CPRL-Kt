@@ -71,13 +71,11 @@ class LogicalExpr(leftOperand : Expression, operator : Token, rightOperand : Exp
         // Note:  Unlike the various emitBranch methods, this method will leave the
         // value (true or false) of the logical expression on the top of the stack.
 
-        // emit code to evaluate the left operand
-        leftOperand.emit()
-
         if (operator.symbol == Symbol.andRW)
           {
-            // if true, branch to code that will evaluate right operand
-            emit("BNZ $L1")
+            // if left operand evaluates to true, branch
+            // to code that will evaluate right operand
+            leftOperand.emitBranch(true, L1)
 
             // otherwise, place "false" back on top of stack as value
             // for the compound "and" expression
@@ -85,8 +83,9 @@ class LogicalExpr(leftOperand : Expression, operator : Token, rightOperand : Exp
           }
         else   // operator.symbol must be Symbol.orRW
           {
-            // if false, branch to code that will evaluate right operand
-            emit("BZ $L1")
+            // if left operand evaluates to false, branch
+            // to code that will evaluate right operand
+            leftOperand.emitBranch(false, L1)
 
             // otherwise, place "true" back on top of stack as value
             // for the compound "or" expression
