@@ -20,13 +20,7 @@
    LDGADDR 4
    LOADW
    CMP
-   BGE L0
-   LDCB 1
-   BR L1
-L0:
-   LDCB 0
-L1:
-   BNZ L4
+   BL L4
    LDCB 0
    BR L5
 L4:
@@ -57,13 +51,7 @@ L7:
    LDGADDR 4
    LOADW
    CMP
-   BGE L8
-   LDCB 1
-   BR L9
-L8:
-   LDCB 0
-L9:
-   BNZ L12
+   BL L12
    LDCB 0
    BR L13
 L12:
@@ -94,13 +82,7 @@ L15:
    LDGADDR 0
    LOADW
    CMP
-   BG L16
-   LDCB 1
-   BR L17
-L16:
-   LDCB 0
-L17:
-   BNZ L20
+   BLE L20
    LDCB 0
    BR L21
 L20:
@@ -131,13 +113,7 @@ L23:
    LDGADDR 0
    LOADW
    CMP
-   BGE L24
-   LDCB 1
-   BR L25
-L24:
-   LDCB 0
-L25:
-   BNZ L28
+   BL L28
    LDCB 0
    BR L29
 L28:
@@ -169,13 +145,7 @@ L31:
    LDGADDR 4
    LOADW
    CMP
-   BGE L32
-   LDCB 1
-   BR L33
-L32:
-   LDCB 0
-L33:
-   BZ L36
+   BGE L36
    LDCB 1
    BR L37
 L36:
@@ -206,13 +176,7 @@ L39:
    LDGADDR 4
    LOADW
    CMP
-   BGE L40
-   LDCB 1
-   BR L41
-L40:
-   LDCB 0
-L41:
-   BZ L44
+   BGE L44
    LDCB 1
    BR L45
 L44:
@@ -244,13 +208,7 @@ L47:
    LDGADDR 0
    LOADW
    CMP
-   BG L48
-   LDCB 1
-   BR L49
-L48:
-   LDCB 0
-L49:
-   BZ L52
+   BG L52
    LDCB 1
    BR L53
 L52:
@@ -282,13 +240,7 @@ L55:
    LDGADDR 4
    LOADW
    CMP
-   BGE L56
-   LDCB 1
-   BR L57
-L56:
-   LDCB 0
-L57:
-   BZ L60
+   BGE L60
    LDCB 1
    BR L61
 L60:

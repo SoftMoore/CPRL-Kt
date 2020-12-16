@@ -9,12 +9,6 @@
    LOADW
    LDCINT 0
    CMP
-   BZ L0
-   LDCB 1
-   BR L1
-L0:
-   LDCB 0
-L1:
    BNZ L4
    LDCB 0
    BR L5

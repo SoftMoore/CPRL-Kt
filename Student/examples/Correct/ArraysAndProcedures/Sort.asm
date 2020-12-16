@@ -32,13 +32,7 @@ L5:
    LOADW
    LDCINT 0
    CMP
-   BL L7
-   LDCB 1
-   BR L8
-L7:
-   LDCB 0
-L8:
-   BNZ L11
+   BGE L11
    LDCB 0
    BR L12
 L11:
