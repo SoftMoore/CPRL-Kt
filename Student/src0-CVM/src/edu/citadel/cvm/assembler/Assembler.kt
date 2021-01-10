@@ -7,6 +7,7 @@ import edu.citadel.cvm.assembler.ast.AST
 import edu.citadel.cvm.assembler.ast.Instruction
 
 import java.io.*
+import java.nio.charset.StandardCharsets
 import kotlin.system.exitProcess
 
 
@@ -113,9 +114,8 @@ class Assembler(private val sourceFile : File)
      */
     fun assemble()
       {
-        val sourceFileReader = FileReader(sourceFile)
-
-        val source  = Source(sourceFileReader)
+        val reader  = FileReader(sourceFile, StandardCharsets.UTF_8)
+        val source  = Source(reader)
         val scanner = Scanner(source)
         val parser  = Parser(scanner)
 

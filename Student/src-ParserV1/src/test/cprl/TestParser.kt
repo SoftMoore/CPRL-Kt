@@ -7,6 +7,7 @@ import edu.citadel.cprl.Parser
 import edu.citadel.compiler.ErrorHandler
 
 import java.io.*
+import java.nio.charset.StandardCharsets
 import kotlin.system.exitProcess
 
 
@@ -28,7 +29,7 @@ fun main(args : Array<String>)
 
     try
       {
-        fileReader = FileReader(fileName)
+        fileReader = FileReader(fileName, StandardCharsets.UTF_8)
       }
     catch (e : FileNotFoundException)
       {
@@ -40,7 +41,7 @@ fun main(args : Array<String>)
             try
               {
                 fileName += SUFFIX
-                fileReader = FileReader(fileName)
+                fileReader = FileReader(fileName, StandardCharsets.UTF_8)
               }
             catch (ex : FileNotFoundException)
               {

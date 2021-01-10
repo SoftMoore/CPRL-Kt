@@ -56,6 +56,8 @@ fun main()
 
                 c2 = ByteUtil.bytesToChar(bytes[0], bytes[1])
                 println("c2 = $c2")
+
+                println("charToHexString = ${ByteUtil.charToHexString(c)}")
                 println()
               }
             else
@@ -70,6 +72,8 @@ fun main()
 
                 c2 = ByteUtil.bytesToChar(bytes[0], bytes[1])
                 println("c2 = $c2")
+
+                println("charToHexSting = ${ByteUtil.charToHexString(c)}")
                 println()
               }
           }

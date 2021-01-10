@@ -6,6 +6,55 @@ package edu.citadel.compiler.util
  */
 object ByteUtil
   {
+    private val HEX_ARRAY = "0123456789ABCDEF".toCharArray()
+
+    /**
+     * Convert a single byte to a string of 2 hexadecimal digits.
+     */
+    fun byteToHexString(b : Byte) : String
+      {
+        val builder = StringBuilder(2)
+        builder.append(HEX_ARRAY[b.toInt() ushr 4])
+        builder.append(HEX_ARRAY[b.toInt() and 0x0F])
+        return builder.toString()
+      }
+
+
+    /**
+     * Convert a 2-byte char to a string of 4 hexadecimal digits.
+     */
+    fun charToHexString(c : Char) : String
+      {
+        val builder = StringBuilder(2)
+        builder.append(HEX_ARRAY[c.toInt() ushr 12])
+        builder.append(HEX_ARRAY[c.toInt() and 0x0F00 shr 8])
+        builder.append(HEX_ARRAY[c.toInt() and 0x00F0 shr 4])
+        builder.append(HEX_ARRAY[c.toInt() and 0x000F])
+        return builder.toString()
+      }
+
+
+    /**
+     * Convert an array of bytes to a string of hexadecimal digits separated by spaces.
+     */
+    fun bytesToHex(bytes : ByteArray) : String
+      {
+        val builder = StringBuilder(bytes.size*3)
+        val hexChars = CharArray(bytes.size*2)
+        for (i in bytes.indices)
+        {
+          val v : Int = bytes[i].toInt() and 0xFF
+          hexChars[i*2] = HEX_ARRAY[v ushr 4]
+          hexChars[i*2 + 1] = HEX_ARRAY[v and 0x0F]
+          builder.append(HEX_ARRAY[v ushr 4])
+          builder.append(HEX_ARRAY[v and 0x0F])
+          builder.append(' ')
+        }
+
+        return builder.toString()
+      }
+
+
     /**
      * Converts 2 bytes to a currentChar.  The bytes passed as arguments are
      * ordered with b0 as the high order byte and b1 as the low order byte.

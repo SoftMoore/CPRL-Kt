@@ -5,6 +5,7 @@ import edu.citadel.compiler.util.ByteUtil
 import edu.citadel.compiler.util.format
 
 import java.io.*
+import java.nio.charset.StandardCharsets
 import kotlin.system.exitProcess
 
 
@@ -17,9 +18,11 @@ private const val FIELD_WIDTH = 4
  */
 fun main(args : Array<String>)
   {
-    // check args
     if (args.isEmpty() || args.size > 1)
-        printUsageMessageAndExit()
+      {
+        System.err.println("Usage: java edu.citadel.cvm.Disassembler filename")
+        exitProcess(0)
+      }
 
     val fileName = args[0]
     val file     = FileInputStream(fileName)
@@ -29,8 +32,8 @@ fun main(args : Array<String>)
     val baseName    = fileName.substring(0, suffixIndex)
 
     val outputFileName = "$baseName.dis.txt"
-    val fw = FileWriter(outputFileName)
-    val out = PrintWriter(BufferedWriter(fw), true)
+    val fileWriter = FileWriter(outputFileName, StandardCharsets.UTF_8)
+    val out = PrintWriter(BufferedWriter(fileWriter), true)
 
     println("disassembling $fileName to $outputFileName")
 

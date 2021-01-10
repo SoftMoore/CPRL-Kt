@@ -38,7 +38,7 @@ class Scanner(private val source : Source)
     val token : Token
         get() = Token(symbol, position, text)
 
-    private val scanBuffer : StringBuilder = StringBuilder(100)
+    private val scanBuffer = StringBuilder(100)
 
 
     /**
@@ -46,13 +46,6 @@ class Scanner(private val source : Source)
      */
     init
       {
-        // initialize HashMap with reserved word symbols
-        for (symbol in Symbol.values())
-          {
-            if (symbol.isReservedWord())
-                rwMap[symbol.toString()] = symbol
-          }
-
         advance()   // advance to the first token
       }
 
@@ -85,8 +78,8 @@ class Scanner(private val source : Source)
               }
             else if (Character.isDigit(source.currentChar.toChar()))
               {
-                text = scanIntegerLiteral()
                 symbol = Symbol.intLiteral
+                text   = scanIntegerLiteral()
               }
             else
               {
@@ -255,7 +248,7 @@ class Scanner(private val source : Source)
      * source.currentChar is the opening double quote (") of the String literal.
      *
      * @return the string of characters for the string literal, including
-     * opening and closing quotes
+     *         opening and closing quotes
      */
     private fun scanStringLiteral() : String
       {

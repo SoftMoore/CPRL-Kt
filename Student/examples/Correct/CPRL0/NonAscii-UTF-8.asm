@@ -1,4 +1,4 @@
-   LDCSTR "Non-ASCII Characters: The Façade Pattern"
+   LDCSTR "Ζήσε πολύ και ευημερώ."
    PUTSTR
    PUTEOL
    HALT

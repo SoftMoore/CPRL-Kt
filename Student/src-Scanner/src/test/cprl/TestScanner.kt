@@ -8,7 +8,9 @@ import edu.citadel.cprl.Symbol
 import edu.citadel.cprl.Token
 
 import java.io.*
+import java.nio.charset.StandardCharsets
 import kotlin.system.exitProcess
+import java.io.PrintStream
 
 
 fun main(args : Array<String>)
@@ -23,7 +25,7 @@ fun main(args : Array<String>)
         println()
 
         val fileName   = args[0]
-        val fileReader = FileReader(fileName)
+        val fileReader = FileReader(fileName, StandardCharsets.UTF_8)
         // write error messages to System.out
         ErrorHandler.setPrintWriter(PrintWriter(System.out, true))
 
@@ -53,18 +55,19 @@ fun main(args : Array<String>)
 
 fun printToken(token : Token)
   {
-    System.out.printf("line: %2d   char: %2d   token: ",
+    val out = PrintStream(java.lang.System.out, true, java.nio.charset.StandardCharsets.UTF_8)
+    out.printf("line: %2d   char: %2d   token: ",
         token.position.lineNumber,
         token.position.charNumber)
 
     val symbol = token.symbol
     if (symbol.isReservedWord())
-        print("Reserved Word -> ")
+        out.print("Reserved Word -> ")
     else if (symbol == Symbol.identifier    || symbol == Symbol.intLiteral
           || symbol == Symbol.stringLiteral || symbol == Symbol.charLiteral)
-        print(token.symbol.toString() + " -> ")
+        out.print(token.symbol.toString() + " -> ")
 
-    println(token.text)
+    out.println(token.text)
   }
 
 

@@ -1,3 +1,0 @@
-begin
-   writeln "Non-ASCII Characters: The Façade Pattern";
-end.

@@ -5,6 +5,7 @@ import edu.citadel.compiler.util.ByteUtil
 import edu.citadel.compiler.util.format
 
 import java.io.*
+import java.nio.charset.StandardCharsets
 import java.util.Scanner
 import kotlin.system.exitProcess
 
@@ -33,9 +34,7 @@ fun main(args : Array<String>)
     if (args.size != 1)
       {
         System.err.println("Usage: java CVM filename")
-
-        // stop the VM with a nonzero status code
-        exitProcess(FAILURE)
+        exitProcess(FAILURE)   // stop the VM with a nonzero status code
       }
 
     val sourceFile = File(args[0])
@@ -66,7 +65,10 @@ class CVM (numOfBytes : Int)
     private val scanner = Scanner(System.`in`)
 
     /** Reader for handling basic char I/O  */
-    private val reader = InputStreamReader(System.`in`)
+    private val reader = InputStreamReader(System.`in`, StandardCharsets.UTF_8)
+
+    /** PrintStream for handling output */
+    private val out = PrintStream(System.out, true, StandardCharsets.UTF_8);
 
     /** computer memory (for the virtual CPRL machine)  */
     private val memory = ByteArray(numOfBytes)
@@ -123,7 +125,7 @@ class CVM (numOfBytes : Int)
      */
     private fun printRegisters()
       {
-        println("PC=$pc, BP=$bp, SB=$sb, SP=$sp")
+        out.println("PC=$pc, BP=$bp, SB=$sb, SP=$sp")
       }
 
 
@@ -143,9 +145,9 @@ class CVM (numOfBytes : Int)
           {
             // Prints "PC ->" in front of the correct memory address
             if (pc == memAddr)
-              print("PC ->")
+                out.print("PC ->")
             else
-              print("     ")
+                out.print("     ")
 
             val memAddrStr = format(memAddr, FIELD_WIDTH)
 
@@ -177,7 +179,7 @@ class CVM (numOfBytes : Int)
                 OpCode.STOREW,
                 OpCode.SUB    ->
                   {
-                    println("$memAddrStr:  ${OpCode.toString(opCode)}")
+                    out.println("$memAddrStr:  ${OpCode.toString(opCode)}")
                     ++memAddr
                   }
 
@@ -186,9 +188,9 @@ class CVM (numOfBytes : Int)
                 OpCode.SHR,
                 OpCode.LDCB   ->
                   {
-                    print("$memAddrStr:  ${OpCode.toString(opCode)}")
+                    out.print("$memAddrStr:  ${OpCode.toString(opCode)}")
                     ++memAddr
-                    println(" ${memory[memAddr++]}")
+                    out.println(" ${memory[memAddr++]}")
                   }
 
                 // opcodes with one int operand
@@ -210,32 +212,32 @@ class CVM (numOfBytes : Int)
                 OpCode.RET,
                 OpCode.STORE  ->
                   {
-                    print("$memAddrStr:  ${OpCode.toString(opCode)}")
+                    out.print("$memAddrStr:  ${OpCode.toString(opCode)}")
                     ++memAddr
                     byte0 = memory[memAddr++]
                     byte1 = memory[memAddr++]
                     byte2 = memory[memAddr++]
                     byte3 = memory[memAddr++]
-                    println(" ${ByteUtil.bytesToInt(byte0, byte1, byte2, byte3)}")
+                    out.println(" ${ByteUtil.bytesToInt(byte0, byte1, byte2, byte3)}")
                   }
 
                 // special case:  LDCCH
                 OpCode.LDCCH  ->
                   {
-                    print("$memAddrStr:  ${OpCode.toString(opCode)}")
+                    out.print("$memAddrStr:  ${OpCode.toString(opCode)}")
                     ++memAddr
                     byte0 = memory[memAddr++]
                     byte1 = memory[memAddr++]
-                    println(" ${ByteUtil.bytesToChar(byte0, byte1)}")
+                    out.println(" ${ByteUtil.bytesToChar(byte0, byte1)}")
                   }
 
                 // special case:  LDCSTR
                 OpCode.LDCSTR ->
                   {
-                    print("$memAddrStr:  ${OpCode.toString(opCode)}")
+                    out.print("$memAddrStr:  ${OpCode.toString(opCode)}")
                     ++memAddr
                     // now print the string
-                    print("  \"")
+                    out.print("  \"")
                     byte0 = memory[memAddr++]
                     byte1 = memory[memAddr++]
                     byte2 = memory[memAddr++]
@@ -246,13 +248,13 @@ class CVM (numOfBytes : Int)
                       {
                         byte0 = memory[memAddr++]
                         byte1 = memory[memAddr++]
-                        print(ByteUtil.bytesToChar(byte0, byte1))
+                        out.print(ByteUtil.bytesToChar(byte0, byte1))
                       }
 
-                    println("\"")
+                    out.println("\"")
                   }
 
-                else -> println("*** Unknown opCode ***")
+                else -> out.println("*** Unknown opCode ***")
               }
           }
 
@@ -263,18 +265,18 @@ class CVM (numOfBytes : Int)
             // Prints "SB ->", "BP ->", and "SP ->" in front of the correct memory address
             when
               {
-                sb == memAddr -> print("SB ->")
-                bp == memAddr -> print("BP ->")
-                sp == memAddr -> print("SP ->")
-                else          -> print("     ")
+                sb == memAddr -> out.print("SB ->")
+                bp == memAddr -> out.print("BP ->")
+                sp == memAddr -> out.print("SP ->")
+                else          -> out.print("     ")
               }
 
             val memAddrStr = format(memAddr, FIELD_WIDTH)
-            println("$memAddrStr:  ${memory[memAddr]}")
+            out.println("$memAddrStr:  ${memory[memAddr]}")
             ++memAddr
           }
 
-        println()
+        out.println()
     }
 
 
@@ -283,7 +285,7 @@ class CVM (numOfBytes : Int)
      */
     private fun pause()
       {
-        println("Press enter to continue...")
+        out.println("Press enter to continue...")
         try
           {
             System.`in`.read()
@@ -717,6 +719,7 @@ class CVM (numOfBytes : Int)
         pushByte(0.toByte())
       }
 
+
     private fun loadConstByteOne()
       {
         pushByte(1.toByte())
@@ -873,25 +876,25 @@ class CVM (numOfBytes : Int)
 
     private fun putChar()
       {
-        print(popChar())
+        out.print(popChar())
       }
 
 
     private fun putByte()
       {
-        print(popByte())
+        out.print(popByte())
       }
 
 
     private fun putInt()
       {
-        print(popInt())
+        out.print(popInt())
       }
 
 
     private fun putEOL()
       {
-        println()
+        out.println()
       }
 
 
@@ -910,7 +913,7 @@ class CVM (numOfBytes : Int)
             str[i] = ByteUtil.bytesToChar(b0, b1)
           }
 
-        print(str)
+        out.print(str)
       }
 
 
