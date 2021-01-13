@@ -73,17 +73,19 @@ class IdTable
         // assumes that idToken is an identifier token
         assert(idToken.symbol == Symbol.identifier)
           { "IdTable.add(): The symbol for idToken is not an identifier." }
+
         val idMap = table[currentLevel]
         val oldDecl = idMap.put(idToken.text, idType)
 
         // check that the identifier has not been defined previously
         if (oldDecl != null)
           {
-            val errorMsg = ("Identifier \"${idToken.text} \" is "+
+            val errorMsg = ("Identifier \"${idToken.text}\" is "+
                     "already defined in the current scope.")
             throw ParserException(idToken.position, errorMsg)
           }
       }
+
 
     /**
      * Returns the IdType associated with the identifier token's text.

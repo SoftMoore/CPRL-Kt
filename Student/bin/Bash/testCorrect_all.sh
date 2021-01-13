@@ -5,17 +5,17 @@
 #
 
 echo Deleting all \".asm\" and \".obj\" files
-echo
 rm -f *.asm
 rm -f *.obj
+echo
 
 echo Recompiling all \".cprl\" files
-echo
 cprlc_all.sh > /dev/null
+echo
 
 echo Reasembling all \".asm\" files
-echo
 assemble_all.sh > /dev/null
+echo
 
 for file in *.obj
 do

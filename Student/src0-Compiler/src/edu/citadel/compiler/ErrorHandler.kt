@@ -68,8 +68,11 @@ object ErrorHandler
     /**
      * Reports a warning and continues compilation.
      */
-    fun reportWarning(warningMessage : String)
-      {
-        err.println("Warning: $warningMessage")
-      }
+    fun reportWarning(warningMessage : String) = err.println("Warning: $warningMessage")
+
+
+    /**
+     * Reports a warning and continues compilation.
+     */
+    fun printMessage(message : String) = err.println(message)
   }

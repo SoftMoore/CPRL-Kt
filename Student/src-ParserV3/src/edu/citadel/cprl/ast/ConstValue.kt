@@ -80,7 +80,7 @@ class ConstValue : Expression
                 catch (e : NumberFormatException)
                   {
                     val errorMsg = "The number \"${literal.text}\" cannot " +
-                                   " be converted to an integer in CPRL."
+                                   "be converted to an integer in CPRL."
                     throw error(literal.position, errorMsg)
                   }
               }

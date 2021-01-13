@@ -22,10 +22,7 @@ fun main(args : Array<String>)
         printUsageAndExit()
 
     var fileName = args[0]
-
-    lateinit var fileReader : FileReader
-
-    printProgressMessage("Initializing...")
+    var fileReader : FileReader
 
     try
       {
@@ -63,17 +60,12 @@ fun main(args : Array<String>)
     val scanner = Scanner(source)
     val parser  = Parser(scanner)
 
-    // write error messages to System.out
-    ErrorHandler.setPrintWriter(PrintWriter(System.out, true))
-
-    printProgressMessage("Starting compilation...")
-
     parser.parseProgram()
 
     if (ErrorHandler.errorsExist())
-        printProgressMessage("Errors detected -- compilation terminated.")
+        ErrorHandler.printMessage("Errors detected in $fileName -- parsing terminated.")
     else
-        printProgressMessage("Compilation complete.")
+        printProgressMessage("Parsing complete.")
 
     println()
   }

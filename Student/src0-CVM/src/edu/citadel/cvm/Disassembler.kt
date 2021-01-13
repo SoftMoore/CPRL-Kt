@@ -151,7 +151,7 @@ fun main(args : Array<String>)
                 opCodeAddr = (opCodeAddr + 1 + Constants.BYTES_PER_INTEGER
                             + strLength*Constants.BYTES_PER_CHAR)
               }
-            else -> out.println("*** Unknown opCode ***")
+            else -> System.err.println("*** Unknown opCode in file $fileName ***")
           }
 
         inByte = file.read()

@@ -14,9 +14,6 @@ import java.io.FileWriter
 import java.io.PrintWriter
 
 
-
-
-
 private const val SUFFIX = ".cprl"
 private const val FAILURE = -1
 
@@ -99,7 +96,7 @@ class Compiler(private val sourceFile : File)
         val scanner = Scanner(source)
         val parser  = Parser(scanner)
 
-        printProgressMessage("Starting compilation for ${sourceFile.name} ...")
+        printProgressMessage("Starting compilation for ${sourceFile.name}...")
 
         // parse source file
         val program = parser.parseProgram()
@@ -129,7 +126,7 @@ class Compiler(private val sourceFile : File)
           }
 
         if (ErrorHandler.errorsExist())
-            printProgressMessage("Errors detected -- compilation terminated.")
+            ErrorHandler.printMessage("Errors detected in ${sourceFile.name} -- compilation terminated.")
         else
             printProgressMessage("Compilation complete.")
       }

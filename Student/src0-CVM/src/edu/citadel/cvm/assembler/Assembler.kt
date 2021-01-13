@@ -162,7 +162,7 @@ class Assembler(private val sourceFile : File)
           }
 
         if (ErrorHandler.errorsExist())
-            printProgressMessage("*** Errors detected -- assembly terminated. ***")
+            ErrorHandler.printMessage("Errors detected in ${sourceFile.getName()} -- assembly terminated. ***")
         else
             printProgressMessage("Assembly complete.")
       }

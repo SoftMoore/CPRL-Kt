@@ -26,8 +26,6 @@ fun main(args : Array<String>)
 
         val fileName   = args[0]
         val fileReader = FileReader(fileName, StandardCharsets.UTF_8)
-        // write error messages to System.out
-        ErrorHandler.setPrintWriter(PrintWriter(System.out, true))
 
         println("starting main loop...")
         println()

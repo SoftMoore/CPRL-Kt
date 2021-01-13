@@ -74,7 +74,7 @@ class IdTable
         // check that the identifier has not been defined previously
         if (oldDecl != null)
           {
-            val errorMsg = "Identifier \"${idToken.text} \" is " +
+            val errorMsg = "Identifier \"${idToken.text}\" is " +
                             "already defined in the current scope."
             throw ParserException(idToken.position, errorMsg)
           }
