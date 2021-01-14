@@ -12,7 +12,7 @@
 #     - CVM
 
 # set PROJECT_HOME to the directory for your IntelliJ projects
-PROJECTS_HOME=/mnt/c/JMooreMACS/Teaching/Compiler/Projects/
+PROJECTS_HOME=/mnt/c/JMooreMACS/Teaching/Compiler/Projects
 
 # set CLASSES_HOME to the directory name used for compiled Java classes
 CLASSES_HOME=$PROJECTS_HOME/out/production
