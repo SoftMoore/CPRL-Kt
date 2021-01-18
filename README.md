@@ -38,7 +38,7 @@ While it is possible to place all functions and classes in one Eclipse project o
      }
 ````
 
-3. Module `CPRL` contains the classes that implement the CPRL compiler. Complete source code is provided for the other two modules described above, but only portions of the source code are provided for this module. Although students will need to refer occasionally to the other two modules in order to understand the role their classes play in developing the CPRL compiler, all new development will take place only in this module. This module has a dependency on modules `Compiler` and `CVM` as described in items 1 and 2 above. Its Java module definition is as follows:
+3. Module `CPRL` contains the classes that implement the CPRL compiler. Complete source code is provided for the other two modules described above, but only portions of the source code are provided for this module. **Although students will need to refer occasionally to the other two modules in order to understand the role their classes play in developing the CPRL compiler, all new development will take place only in this module.** This module has a dependency on modules `Compiler` and `CVM` as described in items 1 and 2 above. Its Java module definition is as follows:
 
 ````java
    module edu.citadel.cprl
@@ -104,7 +104,7 @@ While it is possible to place all functions and classes in one Eclipse project o
 
 - Do not implement error recovery for this project; i.e., when an error is encountered, simply report the error and exit compilation. Follow the examples for the parser methods with complete implementations.
 
-- Test with all correct and incorrect examples. At this point the parser should accept all correct programs and reject all incorrect programs **except** those with type errors. Detection of type errors will be implemented in Project 5. Use the text file showing expected results as a guide.
+- Test with all correct and incorrect examples. At this point the parser should accept all correct programs and reject all incorrect programs **except** those with type errors and/or miscellaneous errors.  Detection of type errors and miscellaneous errors will be implemented in subsequent projects.  Use the text file showing expected results as a guide.
 
 ## Project 3: Error Recovery
 
