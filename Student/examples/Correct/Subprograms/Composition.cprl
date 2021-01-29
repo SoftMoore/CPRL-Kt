@@ -1,0 +1,18 @@
+// test function composition
+// output should be:
+// 42
+
+function f(x : Integer) return Integer is
+begin
+   return 3*x - 1;
+end f;
+
+function g(x : Integer) return Integer is
+begin
+   return x + 4;
+end g;
+
+begin
+   writeln f(g(3));   // should be 20
+   writeln g(f(3));   // should be 12
+end.
