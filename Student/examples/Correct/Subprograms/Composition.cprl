@@ -1,6 +1,4 @@
 // test function composition
-// output should be:
-// 42
 
 function f(x : Integer) return Integer is
 begin
