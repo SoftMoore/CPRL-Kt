@@ -411,7 +411,7 @@ class Parser (private val scanner : Scanner)
      * Parse the following grammar rule:
      * `formalParameters = "(" parameterDecl ( "," parameterDecl )* ")" .`
      *
-     * @return a list of formal parameter declarations.  Returns an empty list if parsing fails.
+     * @return a list of formal parameter declarations.
      */
     fun parseFormalParameters() : List<ParameterDecl>
       {

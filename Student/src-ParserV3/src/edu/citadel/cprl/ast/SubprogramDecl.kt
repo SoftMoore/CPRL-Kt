@@ -18,7 +18,7 @@ abstract class SubprogramDecl(subprogramId : Token) : Declaration(subprogramId)
     var formalParams : List<ParameterDecl> = ArrayList()
 
     /**
-     * The list of initial declarations for this subprogram
+     * The list of initial declarations for this subprogram.
      */
     lateinit var initialDecls : List<InitialDecl>
 
@@ -38,7 +38,7 @@ abstract class SubprogramDecl(subprogramId : Token) : Declaration(subprogramId)
     val subprogramLabel : String = getNewLabel()
 
     /**
-     * Returns the number of bytes for all parameters.
+     * The number of bytes for all parameters.
      */
     val paramLength : Int
         get()
