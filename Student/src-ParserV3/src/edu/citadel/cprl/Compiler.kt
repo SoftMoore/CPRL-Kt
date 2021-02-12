@@ -87,7 +87,7 @@ class Compiler(private val sourceFile : File)
     /**
      * Compile the source file.  If there are no errors in the source file,
      * the object code is placed in a file with the same base file name as
-     * the source file but with a ".obj" suffix.
+     * the source file but with a ".asm" suffix.
      */
     fun compile()
       {
