@@ -1,0 +1,7 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+
+edu.citadel.compiler
+edu.citadel.compiler.util
+test.compiler
+

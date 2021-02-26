@@ -1,1 +1,1 @@
-sourceset_dependencies = '{"Compiler/main": [], "CPRL/main": [], "CVM/main": []}'
+sourceset_dependencies = '{"edu.citadel.cvm/main": []}'

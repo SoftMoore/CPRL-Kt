@@ -1,0 +1,8 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+
+edu.citadel.cvm
+edu.citadel.cvm.assembler
+edu.citadel.cvm.assembler.ast
+edu.citadel.cvm.assembler.optimize
+
