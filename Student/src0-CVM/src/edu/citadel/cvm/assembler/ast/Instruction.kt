@@ -151,33 +151,6 @@ abstract class Instruction(val labels : MutableList<Token>, val opCode : Token)
       }
 
 
-    /**
-     * emit the opCode for the instruction
-     */
-    protected fun emit(opCode : Byte)
-      {
-        outputStream?.write(opCode.toInt())
-      }
-
-
-    /**
-     * emit an integer argument for the instruction
-     */
-    protected fun emit(arg : Int)
-      {
-        outputStream?.write(ByteUtil.intToBytes(arg))
-      }
-
-
-    /**
-     * emit a character argument for the instruction
-     */
-    protected fun emit(arg : Char)
-      {
-        outputStream?.write(ByteUtil.charToBytes(arg))
-      }
-
-
     companion object
       {
         /**

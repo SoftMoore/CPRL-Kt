@@ -10,51 +10,46 @@ import java.io.*
 import java.nio.charset.StandardCharsets
 import kotlin.system.exitProcess
 
-
 private const val SUFFIX  = ".asm"
 private const val FAILURE = -1
+
+private var optimize = true
 
 
 fun main(args : Array<String>)
   {
     // check args
     if (args.isEmpty() || args.size > 2)
-        printUsageMessageAndExit()
+        printUsageAndExit()
 
-    var fileName = args[0]
+    // filename is the last argument
+    var filename = args[args.size - 1]
 
-    if (args.size == 2)
-      {
-        fileName = args[1]
+    for (i in 0 until args.size - 1)
+        processOption(args[i])
 
-        if (args[0] == "-opt:off")
-            Assembler.OPTIMIZE = false
-        else if (args[0] != "-opt:on")
-            printUsageMessageAndExit()
-      }
-
-    var sourceFile = File(fileName)
+    var sourceFile = File(filename)
 
     if (!sourceFile.isFile)
       {
         // see if we can find the file by appending the suffix
-        val index = fileName.lastIndexOf('.')
+        val index = filename.lastIndexOf('.')
 
-        if (index < 0 || fileName.substring(index) != SUFFIX)
+        if (index < 0 || filename.substring(index) != SUFFIX)
           {
-            fileName += SUFFIX
-            sourceFile = File(fileName)
+            filename += SUFFIX
+            sourceFile = File(filename)
 
             if (!sourceFile.isFile)
               {
-                System.err.println("*** File $fileName not found ***")
+                System.err.println("*** File $filename not found ***")
                 exitProcess(FAILURE)
               }
           }
         else
           {
             // don't try to append the suffix
-            System.err.println("*** File $fileName not found ***")
+            System.err.println("*** File $filename not found ***")
             exitProcess(FAILURE)
           }
       }
@@ -86,7 +81,7 @@ private fun printProgressMessage(message : String)
   }
 
 
-private fun printUsageMessageAndExit()
+private fun printUsageAndExit()
   {
     println("Usage: java Assembler <option> <source file>")
     println("where the option is omitted or is one of the following:")
@@ -94,6 +89,16 @@ private fun printUsageMessageAndExit()
     println("-opt:on    Turns on all assembler optimizations (default)")
     println()
     exitProcess(0)
+  }
+
+
+private fun processOption(option: String)
+  {
+    if (option == "-opt:off")
+        optimize = false
+    else if (option == "-opt:on")
+        optimize = true
+    else printUsageAndExit()
   }
 
 
@@ -162,13 +167,14 @@ class Assembler(private val sourceFile : File)
           }
 
         if (ErrorHandler.errorsExist())
-            ErrorHandler.printMessage("Errors detected in ${sourceFile.getName()} -- assembly terminated. ***")
+            ErrorHandler.printMessage("*** Errors detected in ${sourceFile.name} " +
+                                      "-- assembly terminated. ***")
         else
             printProgressMessage("Assembly complete.")
       }
 
 
-    private fun getTargetOutputStream(sourceFile : File): OutputStream?
+    private fun getTargetOutputStream(sourceFile : File): OutputStream
       {
         // get source file name minus the suffix
         var baseName = sourceFile.name

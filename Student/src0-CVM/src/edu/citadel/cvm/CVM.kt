@@ -917,6 +917,17 @@ class CVM (numOfBytes : Int)
       }
 
 
+    private fun returnInst()
+      {
+        val bpSave = bp
+        val paramLength = fetchInt()
+
+        sp = bpSave - paramLength - 1
+        bp = getInt(bpSave)
+        pc = getInt(bpSave + Constants.BYTES_PER_INTEGER)
+      }
+
+
     private fun shiftLeft()
       {
         val operand = popInt()
@@ -938,17 +949,6 @@ class CVM (numOfBytes : Int)
         val shiftAmount = (fetchByte().toInt() and mask.toInt())
 
         pushInt(operand shr shiftAmount)
-      }
-
-
-    private fun returnInst()
-      {
-        val bpSave = bp
-        val paramLength = fetchInt()
-
-        sp = bpSave - paramLength - 1
-        bp = getInt(bpSave)
-        pc = getInt(bpSave + Constants.BYTES_PER_INTEGER)
       }
 
 

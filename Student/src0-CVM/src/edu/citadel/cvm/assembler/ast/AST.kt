@@ -3,6 +3,7 @@ package edu.citadel.cvm.assembler.ast
 
 import edu.citadel.compiler.ConstraintException
 import edu.citadel.compiler.Position
+import edu.citadel.compiler.util.ByteUtil
 
 import java.io.OutputStream
 
@@ -18,6 +19,33 @@ abstract class AST
     protected fun error(errorPosition : Position, errorMessage : String) : ConstraintException
       {
         return ConstraintException(errorPosition, errorMessage)
+      }
+
+
+        /**
+     * emit the opCode for the instruction
+     */
+    protected fun emit(opCode : Byte)
+      {
+        outputStream.write(opCode.toInt())
+      }
+
+
+    /**
+     * emit an integer argument for the instruction
+     */
+    protected fun emit(arg : Int)
+      {
+        outputStream.write(ByteUtil.intToBytes(arg))
+      }
+
+
+    /**
+     * emit a character argument for the instruction
+     */
+    protected fun emit(arg : Char)
+      {
+        outputStream.write(ByteUtil.charToBytes(arg))
       }
 
 
@@ -38,6 +66,6 @@ abstract class AST
         /**
          * The OutputStream to be used for code generation
          */
-        var outputStream : OutputStream? = null
+        lateinit var outputStream : OutputStream
       }
   }
