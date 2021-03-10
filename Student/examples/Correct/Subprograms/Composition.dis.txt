@@ -1,0 +1,31 @@
+   0:  BR 62
+   5:  PROC 0
+  10:  LDLADDR -8
+  15:  LDCINT 3
+  20:  LDLADDR -4
+  25:  LOADW
+  26:  MUL
+  27:  DEC
+  28:  STOREW
+  29:  RET 4
+  34:  PROC 0
+  39:  LDLADDR -8
+  44:  LDLADDR -4
+  49:  LOADW
+  50:  LDCINT 4
+  55:  ADD
+  56:  STOREW
+  57:  RET 4
+  62:  ALLOC 8
+  67:  LDCINT 3
+  72:  CALL -38
+  77:  CALL -72
+  82:  PUTINT
+  83:  PUTEOL
+  84:  ALLOC 8
+  89:  LDCINT 3
+  94:  CALL -89
+  99:  CALL -65
+ 104:  PUTINT
+ 105:  PUTEOL
+ 106:  HALT

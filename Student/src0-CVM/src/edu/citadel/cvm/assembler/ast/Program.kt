@@ -39,15 +39,13 @@ class Program : AST()
      */
     fun optimize()
       {
-        val optimizations = Optimizations.getOptimizations()
-
+        // Note: Instructions.size can change during optimizations so
+        //       a Kotlin for loop will not work here.
         var n = 0
-
         while (n < instructions.size)
-         {
-            for (optimization in optimizations)
+          {
+            for (optimization in Optimizations.optimizations)
                 optimization.optimize(instructions, n)
-
             ++n
           }
       }
