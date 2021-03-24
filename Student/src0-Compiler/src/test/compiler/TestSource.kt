@@ -13,7 +13,7 @@ fun main(args: Array<String>)
         val fileName   = args[0]
         val fileReader = FileReader(fileName, StandardCharsets.UTF_8)
         val source     = Source(fileReader)
-        val out        = PrintStream(System.out, true, StandardCharsets.UTF_8);
+        val out        = PrintStream(System.out, true, StandardCharsets.UTF_8)
 
         while (source.currentChar != Source.EOF)
           {

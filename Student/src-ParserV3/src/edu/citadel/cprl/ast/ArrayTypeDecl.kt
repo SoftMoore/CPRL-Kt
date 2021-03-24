@@ -3,9 +3,9 @@ package edu.citadel.cprl.ast
 
 import edu.citadel.compiler.ConstraintException
 import edu.citadel.compiler.ErrorHandler
-import edu.citadel.cprl.ArrayType;
-import edu.citadel.cprl.Token;
-import edu.citadel.cprl.Type;
+import edu.citadel.cprl.ArrayType
+import edu.citadel.cprl.Token
+import edu.citadel.cprl.Type
 
 /**
  * The abstract syntax tree node for an array type declaration.
