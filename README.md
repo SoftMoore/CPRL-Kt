@@ -14,7 +14,7 @@ As described below, the compiler project is organized into three separate organi
 
 While it is possible to place all functions and classes in one Eclipse project or IntelliJ IDEA module, I recommend the following structure since it separates the architecture in a way that makes the dependencies transparent. If you are using an IDE other than Eclipse or IntelliJ IDEA, there will be a similar way to organize the compiler project into different organizational units within that IDE.
 
-1. Module `Compiler` contains classes that are not directly tied to the CPRL programming language and therefore are useful on any compiler-related project. Examples include classes such as `Position` and `Source` defined in package `edu.citadel.compiler` plus utility classes (objects) such as `ByteUtil` and `CharUtil` defined in package `edu.citadel.compiler.util`. There is also a package named `test.compiler` that contains a couple of test programs for the principal classes in the module. This module has no dependencies on other modules. Its Java module definition is as follows:
+1. Module `edu.citadel.compiler` (`Compiler`) contains classes that are not directly tied to the CPRL programming language and therefore are useful on any compiler-related project. Examples include classes such as `Position` and `Source` defined in package `edu.citadel.compiler` plus utility classes (objects) such as `ByteUtil` and `CharUtil` defined in package `edu.citadel.compiler.util`. There is also a package named `test.compiler` that contains a couple of test programs for the principal classes in the module. This module has no dependencies on other modules. Its Java module definition is as follows:
 
 ````java
    module edu.citadel.compiler
@@ -25,7 +25,7 @@ While it is possible to place all functions and classes in one Eclipse project o
      }
 ````
 
-2. Module `CVM` contains classes that implement the CVM, the virtual machine (emulator) for CPRL. It also contains classes that implement both a CVM assembler and a CVM disassembler. This module has a dependency on the `Compiler` module as described in item 1 above. Its Java module definition is as follows:
+2. Module `edu.citadel.cvm` (`CVM`) contains classes that implement the CVM, the virtual machine (emulator) for CPRL. It also contains classes that implement both a CVM assembler and a CVM disassembler. This module has a dependency on the `Compiler` module as described in item 1 above. Its Java module definition is as follows:
 
 ````java
    module edu.citadel.cvm
@@ -38,7 +38,7 @@ While it is possible to place all functions and classes in one Eclipse project o
      }
 ````
 
-3. Module `CPRL` contains the classes that implement the CPRL compiler. Complete source code is provided for the other two modules described above, but only portions of the source code are provided for this module. **Although students will need to refer occasionally to the other two modules in order to understand the role their classes play in developing the CPRL compiler, all new development will take place only in this module.** This module has a dependency on modules `Compiler` and `CVM` as described in items 1 and 2 above. Its Java module definition is as follows:
+3. Module `edu.citadel.cprl` (`CPRL`) contains the classes that implement the CPRL compiler. Complete source code is provided for the other two modules described above, but only portions of the source code are provided for this module. **Although students will need to refer occasionally to the other two modules in order to understand the role their classes play in developing the CPRL compiler, all new development will take place only in this module.** This module has a dependency on modules `Compiler` and `CVM` as described in items 1 and 2 above. Its Java module definition is as follows:
 
 ````java
    module edu.citadel.cprl
