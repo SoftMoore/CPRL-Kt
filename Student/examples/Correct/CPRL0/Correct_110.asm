@@ -9,35 +9,35 @@ L0:
    LOADW
    LDCINT 0
    CMP
-   BGE L4
+   BGE L7
    LDGADDR 0
    LOADW
    PUTINT
    LDCSTR " is negative"
    PUTSTR
    PUTEOL
-   BR L5
-L4:
+   BR L8
+L7:
    LDGADDR 0
    LOADW
    LDCINT 0
    CMP
-   BNZ L8
+   BNZ L6
    LDGADDR 0
    LOADW
    PUTINT
    LDCSTR " is zero"
    PUTSTR
    PUTEOL
-   BR L5
-L8:
+   BR L8
+L6:
    LDGADDR 0
    LOADW
    PUTINT
    LDCSTR " is positive"
    PUTSTR
    PUTEOL
-L5:
+L8:
    LDGADDR 0
    LOADW
    LDCINT 0

@@ -1,15 +1,15 @@
-// Output should be
-// before p:  n = 5
-// during p:  n = 6
-//  after p:  n = 5
+ // Output should be
+ // before p:  n = 5
+ // during p:  n = 6
+ //  after p:  n = 5
 
-var n : Integer;
+ var n : Integer;
 
-procedure p(n : Integer) is
-begin
-    n := n + 1;
-    writeln "during p:  n = ", n;
-end p;
+ procedure p(n : Integer) is
+ begin
+     n := n + 1;
+     writeln "during p:  n = ", n;
+ end p;
 
 begin
     n := 5;

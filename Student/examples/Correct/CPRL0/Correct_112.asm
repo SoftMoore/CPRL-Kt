@@ -38,28 +38,28 @@ L0:
    MOD
    LDCINT 0
    CMP
-   BNZ L6
+   BNZ L9
    LDCSTR "even"
    PUTSTR
    PUTEOL
-   BR L7
-L6:
+   BR L10
+L9:
    LDGADDR 0
    LOADW
    LDCINT 2
    MOD
    LDCINT 1
    CMP
-   BNZ L10
+   BNZ L8
    LDCSTR "odd"
    PUTSTR
    PUTEOL
-   BR L7
-L10:
+   BR L10
+L8:
    LDCSTR "weird"
    PUTSTR
    PUTEOL
-L7:
+L10:
    LDGADDR 0
    LOADW
    LDCINT 9

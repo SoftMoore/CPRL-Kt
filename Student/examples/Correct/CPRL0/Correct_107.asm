@@ -26,7 +26,7 @@ L1:
    LOADW
    LDCINT 0
    CMP
-   BGE L8
+   BGE L11
    LDGADDR 4
    LDCINT 1
    NEG
@@ -47,22 +47,22 @@ L4:
    BG L5
    BR L4
 L5:
-   BR L9
-L8:
+   BR L12
+L11:
    LDGADDR 0
    LOADW
    LDCINT 0
    CMP
-   BNZ L12
+   BNZ L10
    LDGADDR 4
    LDCINT 0
    STOREW
-   BR L9
-L12:
+   BR L12
+L10:
    LDGADDR 4
    LDCINT 1
    STOREW
-L9:
+L12:
    LDGADDR 12
    LOADB
    BNZ L13
