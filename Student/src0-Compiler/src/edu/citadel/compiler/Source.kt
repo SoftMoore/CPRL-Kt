@@ -53,7 +53,7 @@ class Source(private val sourceReader : Reader)
      */
     fun advance()
       {
-        if (currentChar == '\n'.toInt())
+        if (currentChar == '\n'.code)
           {
             ++lineNumber
             charNumber = 1
