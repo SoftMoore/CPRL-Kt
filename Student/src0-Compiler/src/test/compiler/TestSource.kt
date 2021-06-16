@@ -6,6 +6,9 @@ import java.io.*
 import java.nio.charset.StandardCharsets
 
 
+/*
+ * Test class Source.
+ */
 fun main(args: Array<String>)
   {
     try
@@ -19,9 +22,9 @@ fun main(args: Array<String>)
           {
             val c = source.currentChar
 
-            if (c == '\n'.toInt())
+            if (c == '\n'.code)
                 out.print("\\n")
-            else if (c != '\r'.toInt())
+            else if (c != '\r'.code)
                 out.print(c.toChar())
 
             println("\t ${source.charPosition}")

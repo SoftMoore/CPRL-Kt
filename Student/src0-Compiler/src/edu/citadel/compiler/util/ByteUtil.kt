@@ -26,10 +26,10 @@ object ByteUtil
     fun charToHexString(c : Char) : String
       {
         val builder = StringBuilder(2)
-        builder.append(HEX_ARRAY[c.toInt() ushr 12])
-        builder.append(HEX_ARRAY[c.toInt() and 0x0F00 shr 8])
-        builder.append(HEX_ARRAY[c.toInt() and 0x00F0 shr 4])
-        builder.append(HEX_ARRAY[c.toInt() and 0x000F])
+        builder.append(HEX_ARRAY[c.code ushr 12])
+        builder.append(HEX_ARRAY[c.code and 0x0F00 shr 8])
+        builder.append(HEX_ARRAY[c.code and 0x00F0 shr 4])
+        builder.append(HEX_ARRAY[c.code and 0x000F])
         return builder.toString()
       }
 
@@ -87,8 +87,8 @@ object ByteUtil
       {
         val result = ByteArray(2)
 
-        result[0] = (c.toInt().ushr(8) and 0x00FF).toByte()
-        result[1] = (c.toInt().ushr(0) and 0x00FF).toByte()
+        result[0] = (c.code.ushr(8) and 0x00FF).toByte()
+        result[1] = (c.code.ushr(0) and 0x00FF).toByte()
 
         return result
       }

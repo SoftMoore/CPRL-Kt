@@ -59,7 +59,7 @@ class ConstValue : Expression
         else if (literal.symbol == Symbol.charLiteral)
           {
             val ch = literal.text[1]
-            return ch.toInt()
+            return ch.code
           }
         else
             return 0

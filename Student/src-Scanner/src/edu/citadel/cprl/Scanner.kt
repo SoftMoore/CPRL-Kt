@@ -318,7 +318,7 @@ class Scanner(private val source : Source)
           }
 
         c = source.currentChar.toChar()   // should be the closing single quote
-        checkGraphicChar(c.toInt())
+        checkGraphicChar(c.code)
 
         if (c == '\'')   // should be the closing single quote
         {

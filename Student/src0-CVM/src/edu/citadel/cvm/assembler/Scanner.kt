@@ -359,7 +359,7 @@ class Scanner(private val source : Source)
         if (idLength < 2 || idLength > 7)     // quick check based on string length
             return Symbol.identifier
 
-        val idSymbol = opCodeMap[idString.toUpperCase()]
+        val idSymbol = opCodeMap[idString.upperCase()]
         return idSymbol ?: Symbol.identifier
       }
 
