@@ -11,7 +11,7 @@ import edu.citadel.cprl.Type
 /**
  * The abstract syntax tree node for a constant declaration.
  *
- * @constructor Construct a ConstDecl with its identifier, type, and literal.
+ * @constructor Construct a constant declaration with its identifier, type, and literal.
  */
 class ConstDecl(identifier : Token, constType : Type, val literal : Token?)
     : InitialDecl(identifier, constType)

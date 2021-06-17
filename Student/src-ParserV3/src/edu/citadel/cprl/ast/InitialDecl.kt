@@ -9,7 +9,7 @@ import edu.citadel.cprl.Type
 /**
  * Base class for all initial declarations.
  *
- * @constructor Construct an InitialDecl with its identifier and type.
+ * @constructor Construct an initial declaration with its identifier and type.
  */
 abstract class InitialDecl(identifier : Token, declType : Type)
     : Declaration(identifier, declType)
@@ -18,6 +18,6 @@ abstract class InitialDecl(identifier : Token, declType : Type)
       {
         assert(type == Type.Boolean || type == Type.Integer
             || type == Type.Char    || type is ArrayType)
-            { "Invalid CPRL type in var declaration." }
+            { "Invalid CPRL type." }
       }
   }

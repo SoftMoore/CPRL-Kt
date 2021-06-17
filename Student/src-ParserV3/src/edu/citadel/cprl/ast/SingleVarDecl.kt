@@ -13,7 +13,8 @@ import edu.citadel.cprl.Type
  * Note: A variable declaration where more than one variable is declared
  * is simply a container for multiple single variable declarations.
  *
- * @constructor Construct a SingleVarDecl with its identifier, type, and scope level.
+ * @constructor Construct a single variable declaration with its identifier,
+ *              type, and scope level.
  */
 class SingleVarDecl(identifier : Token, varType : Type, override val scopeLevel : ScopeLevel)
     : InitialDecl(identifier, varType), NamedDecl
