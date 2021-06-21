@@ -57,7 +57,7 @@ class Program(private val declPart : DeclarativePart = DeclarativePart(),
         if (varLength > 0)
             emit("PROGRAM $varLength")
 
-        // emit branch over procedures only if necessary
+        // emit branch over subprograms only if necessary
         if (declPart.subprogramDecls.isNotEmpty())
           {
             // jump over code for subprograms

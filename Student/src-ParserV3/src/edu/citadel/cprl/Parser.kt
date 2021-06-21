@@ -264,7 +264,7 @@ class Parser (private val scanner : Scanner)
      * Parse the following grammar rule:
      * `typeName = "Integer" | "Boolean" | "Char" | typeId .`
      *
-     * @return the parsed named type object.  Returns Type.UNKNOWN if parsing fails.
+     * @return the parsed type name.  Returns Type.UNKNOWN if parsing fails.
      */
     fun parseTypeName() : Type
       {
@@ -474,7 +474,7 @@ class Parser (private val scanner : Scanner)
      * `statement = assignmentStmt | ifStmt | loopStmt | exitStmt | readStmt
      *            | writeStmt | writelnStmt | procedureCallStmt | returnStmt .`
      *
-     * @return the parsed Statement.  Returns null if parsing fails.
+     * @return the parsed statement.  Returns null if parsing fails.
      */
     fun parseStatement() : Statement?
       {
@@ -571,7 +571,7 @@ class Parser (private val scanner : Scanner)
      * Parse the following grammar rule:
      * `expressions = expression ( "," expression )* .`
      *
-     * @return a list of Expressions.  Returns an empty list if parsing fails.
+     * @return a list of expressions.  Returns an empty list if parsing fails.
      */
     fun parseExpressions() : MutableList<Expression>
       {
@@ -637,7 +637,7 @@ class Parser (private val scanner : Scanner)
      * Parse the following grammar rule:
      * `returnStmt = "return" ( expression )? ";" .`
      *
-     * @return the parsed ReturnStmt.  Returns null if parsing fails.
+     * @return the parsed return statement.  Returns null if parsing fails.
      */
     fun parseReturnStmt() : ReturnStmt?
       {
@@ -689,7 +689,7 @@ class Parser (private val scanner : Scanner)
      * Parse the following grammar rule:
      * `variable = ( varId | paramId ) ( "[" expression "]" )* .`
      *
-     * @return the parsed Variable.  Returns null if parsing fails.
+     * @return the parsed variable.  Returns null if parsing fails.
      */
     fun parseVariable() : Variable?
       {
@@ -855,7 +855,7 @@ class Parser (private val scanner : Scanner)
      * Parse the following grammar rule:
      * `namedValue = variable .`
      *
-     * @return the parsed NamedValue.  Returns null if parsing fails.
+     * @return the parsed named value.  Returns null if parsing fails.
      */
     fun parseNamedValue() : NamedValue?
       {
