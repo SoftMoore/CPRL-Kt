@@ -1,6 +1,6 @@
 var b : Boolean;
 
-begin  // incorrect9
+begin
 
    b := FALSE;     // false must be all lowercase
 

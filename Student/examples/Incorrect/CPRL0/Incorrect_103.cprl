@@ -1,7 +1,7 @@
 const i := 5;
 var x : Integer;
 
-begin  // incorrect2
+begin
 
    x := 2;
    i := x;    // assign to a constant
