@@ -63,24 +63,18 @@ open class Type protected constructor(private val name : String, var size : Int 
         /**
          * Returns the type of a literal symbol.  For example, if the
          * symbol is an intLiteral, then Type.Integer is returned.
-         *
-         * @throws IllegalArgumentException if the symbol is not a literal
+         * Returns UNKNOWN if the symbol is not a valid literal symbol.
          */
         fun getTypeOf(literal : Symbol) : Type
           {
-            if (!literal.isLiteral())
-                throw IllegalArgumentException("Symbol is not a literal symbol")
-
-            return if (literal == Symbol.intLiteral)
-                Integer
-            else if (literal == Symbol.stringLiteral)
-                String
-            else if (literal == Symbol.charLiteral)
-                Char
-            else if (literal == Symbol.trueRW || literal == Symbol.falseRW)
-                Boolean
-            else
-                UNKNOWN
+            return when (literal)
+              {
+                Symbol.intLiteral    -> Integer
+                Symbol.stringLiteral -> String
+                Symbol.charLiteral   -> Char
+                Symbol.trueRW, Symbol.falseRW -> Boolean
+                else -> UNKNOWN
+              }
           }
       }
   }
