@@ -152,13 +152,8 @@ class Scanner(private val source : Source)
      */
     fun advanceTo(symbol : Symbol)
       {
-        while (true)
-          {
-            if (this.symbol == symbol || source.currentChar == Source.EOF)
-                return
-            else
-                advance()
-          }
+        while (this.symbol != symbol && source.currentChar != Source.EOF)
+            advance()
       }
 
 
@@ -168,30 +163,8 @@ class Scanner(private val source : Source)
      */
     fun advanceTo(symbols : Array<Symbol>)
       {
-        while (true)
-          {
-            if (search(symbols, symbol) >= 0 || source.currentChar == Source.EOF)
-                return
-            else
-                advance()
-          }
-      }
-
-
-    /**
-     * Performs a linear search of the array for the given value.
-     *
-     * @return the index of the value in the array if found, otherwise -1.
-     */
-    private fun search(symbols : Array<Symbol>, value : Symbol) : Int
-      {
-        for (i in symbols.indices)
-          {
-            if (symbols[i] == value)
-                return i
-          }
-
-        return -1
+        while (!symbols.contains(symbol) && source.currentChar != Source.EOF)
+            advance()
       }
 
 
