@@ -1,0 +1,134 @@
+Starting compilation for Incorrect_201.cprl...
+Checking constraints...
+*** Constraint error detected near line 17, character 6:
+    Type mismatch for assignment statement.
+Errors detected in Incorrect_201.cprl -- compilation terminated.
+
+Starting compilation for Incorrect_202.cprl...
+Checking constraints...
+*** Constraint error detected near line 9, character 8:
+    Expression for a var parameter must be a variable.
+Errors detected in Incorrect_202.cprl -- compilation terminated.
+
+Starting compilation for Incorrect_203.cprl...
+*** Syntax error detected near line 4, character 1:
+    Expecting "is" but found "begin" instead.
+*** Syntax error detected near line 6, character 5:
+    Expecting "." but found "inc" instead.
+Errors detected in Incorrect_203.cprl -- compilation terminated.
+
+Starting compilation for Incorrect_204.cprl...
+Checking constraints...
+*** Constraint error detected near line 17, character 11:
+    Parameter type mismatch.
+Errors detected in Incorrect_204.cprl -- compilation terminated.
+
+Starting compilation for Incorrect_205.cprl...
+*** Syntax error detected near line 3, character 7:
+    Expecting ":" but found "=" instead.
+*** Syntax error detected near line 21, character 4:
+    Identifier "n" has not been declared.
+*** Syntax error detected near line 22, character 10:
+    Identifier "n" has not been declared.
+Errors detected in Incorrect_205.cprl -- compilation terminated.
+
+Starting compilation for Incorrect_206.cprl...
+Checking constraints...
+*** Constraint error detected near line 16, character 9:
+    Incorrect number of actual parameters.
+Errors detected in Incorrect_206.cprl -- compilation terminated.
+
+Starting compilation for Incorrect_207.cprl...
+Checking constraints...
+*** Constraint error detected near line 3, character 10:
+    A function must have at least one return statement.
+Errors detected in Incorrect_207.cprl -- compilation terminated.
+
+Starting compilation for Incorrect_208.cprl...
+Checking constraints...
+*** Constraint error detected near line 7, character 15:
+    Right operand for expression should have type Integer.
+Errors detected in Incorrect_208.cprl -- compilation terminated.
+
+Starting compilation for Incorrect_209.cprl...
+Checking constraints...
+*** Constraint error detected near line 16, character 9:
+    Incorrect number of actual parameters.
+Errors detected in Incorrect_209.cprl -- compilation terminated.
+
+Starting compilation for Incorrect_210.cprl...
+*** Syntax error detected near line 10, character 1:
+    Expecting ";" but found "end" instead.
+Errors detected in Incorrect_210.cprl -- compilation terminated.
+
+Starting compilation for Incorrect_211.cprl...
+*** Syntax error detected near line 12, character 5:
+    Function name mismatch.
+Errors detected in Incorrect_211.cprl -- compilation terminated.
+
+Starting compilation for Incorrect_212.cprl...
+Checking constraints...
+*** Constraint error detected near line 3, character 16:
+    A function cannot have var parameters.
+Errors detected in Incorrect_212.cprl -- compilation terminated.
+
+Starting compilation for Incorrect_213.cprl...
+Checking constraints...
+*** Constraint error detected near line 5, character 7:
+    A return statement nested within a function must return a value.
+Errors detected in Incorrect_213.cprl -- compilation terminated.
+
+Starting compilation for Incorrect_214.cprl...
+Checking constraints...
+*** Constraint error detected near line 7, character 14:
+    Return expression type does not match function return type.
+Errors detected in Incorrect_214.cprl -- compilation terminated.
+
+Starting compilation for Incorrect_215.cprl...
+*** Syntax error detected near line 9, character 5:
+    Function name mismatch.
+Errors detected in Incorrect_215.cprl -- compilation terminated.
+
+Starting compilation for Incorrect_216.cprl...
+Checking constraints...
+*** Constraint error detected near line 4, character 16:
+    The number "9999999999999" cannot be converted to an integer in CPRL.
+Errors detected in Incorrect_216.cprl -- compilation terminated.
+
+Starting compilation for Incorrect_217.cprl...
+Checking constraints...
+*** Constraint error detected near line 7, character 15:
+    Right operand for expression should have type Integer.
+Errors detected in Incorrect_217.cprl -- compilation terminated.
+
+Starting compilation for Incorrect_218.cprl...
+*** Syntax error detected near line 13, character 12:
+    Identifier "inc" is not valid as an expression.
+*** Syntax error detected near line 13, character 17:
+    Expecting ";" but found ")" instead.
+Errors detected in Incorrect_218.cprl -- compilation terminated.
+
+Starting compilation for Incorrect_219.cprl...
+Checking constraints...
+*** Constraint error detected near line 4, character 7:
+    Type mismatch for assignment statement.
+Errors detected in Incorrect_219.cprl -- compilation terminated.
+
+Starting compilation for Incorrect_220.cprl...
+Checking constraints...
+*** Constraint error detected near line 2, character 18:
+    The number "9999999999999" cannot be converted to an integer in CPRL.
+Errors detected in Incorrect_220.cprl -- compilation terminated.
+
+Starting compilation for Incorrect_221.cprl...
+Checking constraints...
+*** Constraint error detected near line 17, character 6:
+    Parameter type mismatch.
+Errors detected in Incorrect_221.cprl -- compilation terminated.
+
+Starting compilation for Incorrect_222.cprl...
+Checking constraints...
+*** Constraint error detected near line 8, character 14:
+    Return expression allowed only within functions.
+Errors detected in Incorrect_222.cprl -- compilation terminated.
+

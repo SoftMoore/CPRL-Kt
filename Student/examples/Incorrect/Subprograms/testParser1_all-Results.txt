@@ -1,0 +1,78 @@
+Parsing Incorrect_201.cprl...
+Parsing complete.
+
+Parsing Incorrect_202.cprl...
+Parsing complete.
+
+Parsing Incorrect_203.cprl...
+*** Syntax error detected near line 4, character 1:
+    Expecting "is" but found "begin" instead.
+Errors detected -- parsing terminated.
+
+Parsing Incorrect_204.cprl...
+Parsing complete.
+
+Parsing Incorrect_205.cprl...
+*** Syntax error detected near line 3, character 7:
+    Expecting ":" but found "=" instead.
+Errors detected -- parsing terminated.
+
+Parsing Incorrect_206.cprl...
+Parsing complete.
+
+Parsing Incorrect_207.cprl...
+Parsing complete.
+
+Parsing Incorrect_208.cprl...
+Parsing complete.
+
+Parsing Incorrect_209.cprl...
+Parsing complete.
+
+Parsing Incorrect_210.cprl...
+*** Syntax error detected near line 10, character 1:
+    Expecting ";" but found "end" instead.
+Errors detected -- parsing terminated.
+
+Parsing Incorrect_211.cprl...
+*** Syntax error detected near line 12, character 5:
+    Function name mismatch.
+Errors detected -- parsing terminated.
+
+Parsing Incorrect_212.cprl...
+Parsing complete.
+
+Parsing Incorrect_213.cprl...
+Parsing complete.
+
+Parsing Incorrect_214.cprl...
+Parsing complete.
+
+Parsing Incorrect_215.cprl...
+*** Syntax error detected near line 9, character 5:
+    Function name mismatch.
+Errors detected -- parsing terminated.
+
+Parsing Incorrect_216.cprl...
+Parsing complete.
+
+Parsing Incorrect_217.cprl...
+Parsing complete.
+
+Parsing Incorrect_218.cprl...
+*** Syntax error detected near line 13, character 12:
+    Identifier "inc" is not valid as an expression.
+Errors detected -- parsing terminated.
+
+Parsing Incorrect_219.cprl...
+Parsing complete.
+
+Parsing Incorrect_220.cprl...
+Parsing complete.
+
+Parsing Incorrect_221.cprl...
+Parsing complete.
+
+Parsing Incorrect_222.cprl...
+Parsing complete.
+

@@ -1,0 +1,45 @@
+Starting compilation for Incorrect_301.cprl...
+Checking constraints...
+*** Constraint error detected near line 9, character 9:
+    Type mismatch for assignment statement.
+*** Constraint error detected near line 10, character 11:
+    Index expression must have type Integer.
+*** Constraint error detected near line 11, character 6:
+    Index expression must have type Integer.
+*** Constraint error detected near line 12, character 6:
+    Index expression must have type Integer.
+Errors detected in Incorrect_301.cprl -- compilation terminated.
+
+Starting compilation for Incorrect_302.cprl...
+Checking constraints...
+*** Constraint error detected near line 11, character 10:
+    Index expression not allowed; not an array.
+*** Constraint error detected near line 12, character 10:
+    Type mismatch for assignment statement.
+*** Constraint error detected near line 13, character 18:
+    Index expression not allowed; not an array.
+*** Constraint error detected near line 14, character 7:
+    Type mismatch for assignment statement.
+Errors detected in Incorrect_302.cprl -- compilation terminated.
+
+Starting compilation for Incorrect_303.cprl...
+Checking constraints...
+*** Constraint error detected near line 7, character 11:
+    Index expression must have type Integer.
+*** Constraint error detected near line 8, character 14:
+    Index expression must have type Integer.
+Errors detected in Incorrect_303.cprl -- compilation terminated.
+
+Starting compilation for Incorrect_304.cprl...
+Checking constraints...
+*** Constraint error detected near line 10, character 8:
+    Type mismatch for left and right operands of a relational expression.
+*** Constraint error detected near line 15, character 8:
+    Type of operands not permitted for a relational expression.
+Errors detected in Incorrect_304.cprl -- compilation terminated.
+
+Starting compilation for Incorrect_305.cprl...
+*** Syntax error detected near line 1, character 16:
+    Invalid constant.
+Errors detected in Incorrect_305.cprl -- compilation terminated.
+

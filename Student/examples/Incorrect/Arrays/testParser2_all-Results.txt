@@ -1,0 +1,17 @@
+Parsing Incorrect_301.cprl...
+Parsing complete.
+
+Parsing Incorrect_302.cprl...
+Parsing complete.
+
+Parsing Incorrect_303.cprl...
+Parsing complete.
+
+Parsing Incorrect_304.cprl...
+Parsing complete.
+
+Parsing Incorrect_305.cprl...
+*** Syntax error detected near line 1, character 16:
+    Invalid constant.
+Errors detected in Incorrect_305.cprl -- parsing terminated.
+
