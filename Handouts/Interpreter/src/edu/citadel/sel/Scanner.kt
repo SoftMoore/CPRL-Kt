@@ -11,68 +11,38 @@ import java.io.IOException
  */
 class Scanner(private val source : Source)
   {
-    /**
-     * The current symbol in the source file.
-     */
+    /** The current symbol in the source file. */
     var symbol = Symbol.unknown
         private set
 
-    /**
-     * The position of the current symbol in the source file.
-     */
+    /** Position of the current symbol in the source file. */
     var position = Position()
         private set
 
-    /**
-     * The text of the current token in the source file;
-     * e.g., for identifiers or literals.
-     */
-    private var text : String = ""
+    private var text : String = ""   // text of current token (for identifiers and literals)
 
-    /**
-     * The current token in the source file.
-     */
+    /** The current token in the source file. */
     val token : Token
         get() = Token(symbol, position, text)
 
-    /**
-     * The second symbol in the source file.
-     */
+    /** The lookahead symbol. */
     var peekSymbol = Symbol.unknown
-        get()
-          {
-            advancePeek()
-            return field
-          }
         private set
 
-    private var isPeekValid : Boolean = false
+    private var peekPosition = Position()   // position of peekSymbol
+    private var peekText : String = ""      // text of peekSymbol
+
+    private val scanBuffer= StringBuilder(100)
 
 
-    /** Set values for peek properties. */
-    private fun advancePeek()
+    /**
+     * Initialize scanner by advancing through the first two tokens.
+     */
+    init
       {
-        if (!isPeekValid)
-          {
-            // save current values
-            val savedSymbol   = symbol
-            val savedPosition = position
-            val savedText     = text
-
-            advance()
-
-            peekSymbol = symbol
-
-            // restore saved current values
-            symbol = savedSymbol
-            position = savedPosition
-            text = savedText
-
-            isPeekValid = true
-          }
+        advance()       // load current and peek values
+        advance()
       }
-
-    private val scanBuffer : StringBuilder = StringBuilder(100)
 
 
     /**
@@ -81,103 +51,96 @@ class Scanner(private val source : Source)
     @Throws(IOException::class, InterpreterException::class)
     fun advance()
       {
-        if (isPeekValid)
+        // assign peek values to current values
+        symbol   = peekSymbol
+        position = peekPosition
+        text     = peekText
+
+        skipWhiteSpace()
+
+        // currently at starting character of the next token
+        peekPosition = source.charPosition
+        peekText = ""
+
+        if (source.currentChar == Source.EOF)
           {
-            // peekSymbol was previously used as the second lookahead
-            // symbol and is now valid as the current symbol
-            symbol      = peekSymbol
-            isPeekValid = false
+            // set peekSymbol but don't advance
+            peekSymbol = Symbol.EOF
+          }
+        else if (Character.isLetter(source.currentChar))
+          {
+            peekText   = scanIdentifier()
+            peekSymbol = Symbol.identifier
+          }
+        else if (Character.isDigit(source.currentChar))
+          {
+            peekText   = scanNumericLiteral()
+            peekSymbol = Symbol.numericLiteral
           }
         else
           {
-            skipWhiteSpace()
-
-            // currently at starting character of the next token
-            position = source.charPosition
-            text = ""
-
-            if (source.currentChar == Source.EOF)
+            when (source.currentChar.toChar())
               {
-                // set symbol but don't advance
-                symbol = Symbol.EOF
-              }
-            else if (Character.isLetter(source.currentChar))
-              {
-                text   = scanIdentifier()
-                symbol = Symbol.identifier
-              }
-            else if (Character.isDigit(source.currentChar))
-              {
-                text   = scanNumericLiteral()
-                symbol = Symbol.numericLiteral
-              }
-            else
-              {
-                when (source.currentChar.toChar())
+                '\r' ->
                   {
-                    '\r' ->
+                    source.advance()
+                    if (source.currentChar.toChar() == '\n')
                       {
-                        source.advance()
-                        if (source.currentChar.toChar() == '\n')
-                          {
-                            symbol = Symbol.EOL
-                            source.advance()
-                          }
-                        else
-                          {
-                            error("Invalid end-of-line character.")
-                          }
-                      }
-                    '\n' ->
-                      {
-                        symbol = Symbol.EOL
+                        peekSymbol = Symbol.EOL
                         source.advance()
                       }
-                    '+' ->
-                      {
-                        symbol = Symbol.plus
-                        source.advance()
-                      }
-                    '-' ->
-                      {
-                        symbol = Symbol.minus
-                        source.advance()
-                      }
-                    '*' ->
-                      {
-                        symbol = Symbol.times
-                        source.advance()
-                      }
-                    '/' ->
-                      {
-                        symbol = Symbol.divide
-                        source.advance()
-                      }
-                    '(' ->
-                      {
-                        symbol = Symbol.leftParen
-                        source.advance()
-                      }
-                    ')' ->
-                      {
-                        symbol = Symbol.rightParen
-                        source.advance()
-                      }
-                    '.' ->
-                      {
-                        symbol = Symbol.dot
-                        source.advance()
-                      }
-                    '=' ->
-                      {
-                        symbol = Symbol.assign
-                        source.advance()
-                      }
-                    else ->
-                      {
-                        val errorMsg = "Invalid character \'" + source.currentChar + "\'"
-                        error(errorMsg)
-                      }
+                    else
+                        error("Invalid end-of-line character.")
+                  }
+                '\n' ->
+                   {
+                    peekSymbol = Symbol.EOL
+                    source.advance()
+                   }
+                '+' ->
+                  {
+                    peekSymbol = Symbol.plus
+                    source.advance()
+                  }
+                '-' ->
+                  {
+                    peekSymbol = Symbol.minus
+                    source.advance()
+                  }
+                '*' ->
+                  {
+                    peekSymbol = Symbol.times
+                    source.advance()
+                  }
+                '/' ->
+                  {
+                    peekSymbol = Symbol.divide
+                    source.advance()
+                  }
+                '(' ->
+                  {
+                    peekSymbol = Symbol.leftParen
+                    source.advance()
+                  }
+                ')' ->
+                  {
+                    peekSymbol = Symbol.rightParen
+                    source.advance()
+                  }
+                '.' ->
+                  {
+                    peekSymbol = Symbol.dot
+                    source.advance()
+                  }
+                '=' ->
+                  {
+                    peekSymbol = Symbol.assign
+                    source.advance()
+                   }
+                else ->
+                  {
+                    val errorMsg = "Invalid character \'" + source.currentChar + "\'"
+                    error(errorMsg)
                   }
               }
           }
@@ -272,14 +235,5 @@ class Scanner(private val source : Source)
         val errorMsg = """*** Lexical error detected near position $position:\n"
 |                    + "    $message"""
         throw InterpreterException(errorMsg)
-      }
-
-    /**
-     * Initialize scanner with its associated source and advance
-     * to the first token.
-     */
-    init
-      {
-        advance() // advance to the first token
       }
   }

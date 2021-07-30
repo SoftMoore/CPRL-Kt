@@ -72,10 +72,7 @@ class Parser(private val scanner : Scanner)
         match(Symbol.assign)
         val expr : Expression? = parseExpression()
 
-          return if (expr != null)
-                     AssignExpr(idToken, expr)
-                 else
-                     null
+        return if (expr != null) AssignExpr(idToken, expr) else null
       }
 
 
