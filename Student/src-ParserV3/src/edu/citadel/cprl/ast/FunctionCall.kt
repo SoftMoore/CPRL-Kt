@@ -33,13 +33,10 @@ class FunctionCall(private val funcId       : Token,
                 expr.checkConstraints()
 
             // check that parameter types match
-            val iterActual = actualParams.iterator()
-            val iterFormal = formalParams.iterator()
-
-            while (iterActual.hasNext())
+            for (i in actualParams.indices)
               {
-                val expr  = iterActual.next()
-                val param = iterFormal.next()
+                val expr  = actualParams[i]
+                val param = formalParams[i]
 
                 if (!matchTypes(expr.type, param.type))
                     throw error(expr.position, "Parameter type mismatch.")
