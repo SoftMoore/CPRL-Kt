@@ -10,7 +10,7 @@ del *.obj
 del *.tmp
 echo.
 
-echo Recompiling all ".cprl files
+echo Recompiling all ".cprl" files
 call cprlc_all > nul
 echo.
 
