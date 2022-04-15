@@ -161,7 +161,7 @@ class Scanner(private val source : Source)
      */
     private fun scanIdentifier() : String
       {
-        // assumes that source.getChar() is the first character of the identifier
+        // assumes that source.currentChar is the first character of the identifier
         assert(Character.isLetter(source.currentChar.toChar()))
             { "Check identifier start for letter at position $position." }
 
@@ -179,14 +179,14 @@ class Scanner(private val source : Source)
 
 
     /**
-     * Scans characters in the source file for a valid integer literal.
-     * Assumes that source.getChar() is the first character of the Integer literal.
+     * Scans characters in the source file for a valid integer literal.  Assumes
+     * that source.currentChar is the first character of the Integer literal.
      *
      * @return the string of digits for the integer literal.
      */
     private fun scanIntegerLiteral() : String
       {
-        // assumes that source.getChar() is the first digit of the integer literal
+        // assumes that source.currentChar is the first digit of the integer literal
         assert(Character.isDigit(source.currentChar.toChar()))
             { "Check integer literal start for digit at position $position." }
 
@@ -205,7 +205,7 @@ class Scanner(private val source : Source)
 
     private fun skipComment()
       {
-        // assumes that source.getChar() is the leading ';'
+        // assumes that source.currentChar is the leading ';'
         assert(source.currentChar.toChar() == ';')
             { "Check for ';' to start comment." }
 
@@ -217,7 +217,7 @@ class Scanner(private val source : Source)
     /**
      * Scans characters in the source file for a String literal.
      * Escaped characters are converted; e.g., '\t' is converted to
-     * the tab character.  Assumes that source.getChar() is the
+     * the tab character.  Assumes that source.currentChar is the
      * opening quote (") of the String literal.
      *
      * @return the string of characters for the string literal, including
@@ -225,7 +225,7 @@ class Scanner(private val source : Source)
      */
     private fun scanStringLiteral() : String
       {
-        // assumes that source.getChar() is the opening double quote for the string literal
+        // assumes that source.currentChar is the opening double quote for the string literal
         assert(source.currentChar.toChar() == '\"')
             { "Check for opening quote (\") at position $position." }
 
@@ -256,7 +256,7 @@ class Scanner(private val source : Source)
     /**
      * Scans characters in the source file for a valid char literal.
      * Escaped characters are converted; e.g., '\t' is converted to the
-     * tab character.  Assumes that source.getChar() is the opening
+     * tab character.  Assumes that source.currentChar is the opening
      * single quote (') of the Char literal.
      *
      * @return the string of characters for the char literal, including
@@ -264,7 +264,8 @@ class Scanner(private val source : Source)
      */
     private fun scanCharLiteral() : String
       {
-        // assumes that source.getChar() is the opening single quote for the char literal
+        // assumes that source.currentChar is the
+        // opening single quote for the char literal
         assert(source.currentChar.toChar() == '\'')
             { "Check for opening quote (\') at position $position." }
 
@@ -313,14 +314,14 @@ class Scanner(private val source : Source)
      * a character preceded by a backslash.  This method handles escape
      * characters \b, \t, \n, \f, \r, \", \', and \\.  If the character
      * following a backslash is anything other than one of these characters,
-     * then an exception is thrown.  Assumes that source.getChar() is the
+     * then an exception is thrown.  Assumes that source.currentChar is the
      * escape character (\).
      *
      * @return the value for an escaped character.
      */
     private fun scanEscapedChar() : Char
       {
-        // assumes that source.getChar() is a backslash character
+        // assumes that source.currentChar is a backslash character
         assert(source.currentChar.toChar() == '\\')
             { "Check for escape character ('\\') at position $position." }
 
