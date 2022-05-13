@@ -11,9 +11,11 @@ class Program(private val expressions : List<Expression>) : Expression
   {
     override fun interpret(context : Context) : Double
       {
-        for (expr in expressions)
-            expr.interpret(context)
+        // interpret all but the last expression
+        for (i in 0..expressions.size-2)
+            expressions[i].interpret(context)
 
+        // now interpret the last one
         val lastExpr = expressions[expressions.size - 1]
         return lastExpr.interpret(context)
       }

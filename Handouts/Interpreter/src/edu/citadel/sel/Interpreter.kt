@@ -20,13 +20,13 @@ fun main(args : Array<String>)
         val parser = Parser(scanner)
         val context = Context()
         val program : Program = parser.parseProgram()
-        System.out.println(program.interpret(context))
+        println(program.interpret(context))
       }
     else
       {
         // run interactive interpreter
         var exprStr   : String? = ""
-        var exprValue : Double = 0.0
+        var exprValue : Double
 
         println("Starting SEL interpreter.  Enter \":q\" to quit.")
 
