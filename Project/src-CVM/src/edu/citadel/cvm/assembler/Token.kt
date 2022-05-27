@@ -26,16 +26,17 @@ class Token : AbstractToken<Symbol>
 
     /**
      * Constructs a new Token with the specified symbol.  Position
-     * and text are initialized to null  This constructor is
-     * useful when replacing instructions during optimization.
+     * and text are initialized to default values  Tconstructor
+     * is  useful when replacing instructions during optimization.
      */
     constructor(symbol: Symbol) : super(symbol, Position(), "")
 
 
     /**
      * Constructs a new Token with the specified symbol and text.
-     * Position is initialized to null.  This constructor is
-     * useful when replacing instructions during optimization.
+     * Position is initialized to the default value.  This constructor
+     * is
+     useful when replacing instructions during optimization.
      */
     constructor(symbol: Symbol, text: String) : super(symbol, Position(), text)
   }
