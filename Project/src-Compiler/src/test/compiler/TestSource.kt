@@ -27,7 +27,7 @@ fun main(args: Array<String>)
             else if (c != '\r'.code)
                 out.print(c.toChar())
 
-            println("\t ${source.charPosition}")
+            out.println("\t ${source.charPosition}")
 
             source.advance()
           }
