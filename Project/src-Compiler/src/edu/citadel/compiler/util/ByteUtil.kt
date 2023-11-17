@@ -37,7 +37,7 @@ object ByteUtil
     /**
      * Convert an array of bytes to a string of hexadecimal digits separated by spaces.
      */
-    fun bytesToHex(bytes : ByteArray) : String
+    fun bytesToHexString(bytes : ByteArray) : String
       {
         val builder = StringBuilder(bytes.size*3)
         val hexChars = CharArray(bytes.size*2)
