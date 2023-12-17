@@ -14,7 +14,7 @@ class Token(symbol : Symbol, position : Position, text : String)
     : AbstractToken<Symbol>(symbol, position, text)
   {
     /**
-     * Construct a new token with symbol = Symbol.UNKNOWN.
+     * Construct a new token with symbol = Symbol.unknown.
      * Position and text are initialized to default values.
      */
     constructor() : this(Symbol.unknown, Position(), "")
