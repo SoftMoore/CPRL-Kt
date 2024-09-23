@@ -84,8 +84,7 @@ class Parser(private val scanner : Scanner)
     /**
      * Parse the following grammar rules:
      * `literal = intLiteral | charLiteral | stringLiteral | booleanLiteral .
-     *
-     * booleanLiteral = "true" | "false" .`
+     *  booleanLiteral = "true" | "false" .`
      */
     fun parseLiteral()
       {
@@ -527,8 +526,7 @@ class Parser(private val scanner : Scanner)
     /**
      * Parse the following grammar rules:
      * `expression = relation ( logicalOp relation )* .
-     *
-     * logicalOp = "and" | "or" .`
+     *  logicalOp = "and" | "or" .`
      */
     fun parseExpression()
       {
@@ -545,8 +543,7 @@ class Parser(private val scanner : Scanner)
     /**
      * Parse the following grammar rules:
      * `relation = simpleExpr ( relationalOp simpleExpr )? .
-     *
-     * relationalOp = "=" | "!=" | "<" | "<=" | ">" | ">=" .`
+     *  relationalOp = "=" | "!=" | "<" | "<=" | ">" | ">=" .`
      */
     fun parseRelation()
       {
@@ -557,8 +554,7 @@ class Parser(private val scanner : Scanner)
     /**
      * Parse the following grammar rules:
      * `simpleExpr = ( addingOp )? term ( addingOp term )* .
-     *
-     * addingOp = "+" | "-" .`
+     *  addingOp = "+" | "-" .`
      */
     fun parseSimpleExpr()
       {
@@ -569,8 +565,7 @@ class Parser(private val scanner : Scanner)
     /**
      * Parse the following grammar rules:
      * `term = factor ( multiplyingOp factor )* .
-     *
-     * multiplyingOp = "*" | "/" | "mod" .`
+     *  multiplyingOp = "*" | "/" | "mod" .`
      */
     fun parseTerm()
       {
